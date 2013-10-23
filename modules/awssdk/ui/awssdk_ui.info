@@ -1,0 +1,14 @@
+name = AWS SDK for PHP UI
+description = The AWS SDK for PHP configuration UI.
+package = Libraries
+core = 7.x
+configure = admin/config/media/awssdk
+dependencies[] = awssdk
+files[] = awssdk_ui.test
+
+; Information added by drupal.org packaging script on 2011-12-09
+version = "7.x-4.8"
+core = "7.x"
+project = "awssdk"
+datestamp = "1323462637"
+

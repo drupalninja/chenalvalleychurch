@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Provide tests.
+ *
+ * @author Jimmy Berry ("boombatower", http://drupal.org/user/214218)
+ */
+
+class AWSSDKUIUnitTest extends DrupalUnitTestCase {
+  public static function getInfo() {
+    return array(
+      'name' => 'AWS SDK UI',
+      'description' => 'Ensure the UI settings match those provided by the SDK.',
+      'group' => 'AWS SDK',
+    );
+  }
+
+  /**
+   * Ensure the UI settings match those provided by the SDK.
+   */
+  function testUI() {
+    // Load the default settings keys and ensure that they loaded properly.
+    $defaults = array_keys(awssdk_config_defaults());
+    $this->assertTrue($defaults, count($defaults) . ' default settings loaded.');
+
+    // Load the UI form and get the settings keys.
+    $form_state = array();
+    $form = awssdk_ui_settings_form(array(), $form_state);
+
+    // Get the children of the form and remove the actions buttons.
+    $children = element_children($form);
+    array_pop($children);
+
+    if (!$this->assertEqual($defaults, $children, 'The settings provided by the UI are indentical to those provided by the SDK.')) {
+      debug(array_diff($defaults, $children));
+    }
+  }
+}
