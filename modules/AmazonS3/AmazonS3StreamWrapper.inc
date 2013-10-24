@@ -15,41 +15,41 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
    * @var String
    */
   protected $uri;
-  
+
   /**
    * File pointer
    *
    * @var int
    */
   protected $position;
-  
+
   /**
    * S3 connection object
    *
    * @var AmazonS3
    */
   protected $s3 = null;
-  
+
   /**
    * S3 bucket name
    *
    * @var string
    */
   protected $bucket;
-  
+
   /**
    * Object cache
    *
    * @var CFResponse
    */
   protected $object = null;
-  
+
   protected $object_exists = null;
 
   public function setUri($uri) {
     $this->uri = $uri;
   }
-   
+
   public function getUri() {
      return $this->uri;
    }
@@ -58,14 +58,14 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
     if(!isset($this->bucket)) {
       $this->bucket = $bucket = variable_get('amazons3_bucket', '');
     }
-    
+
     // image styles support
     $path = explode('/', $this->getLocalPath());
     if($path[0] == 'styles' && !$this->objectExists($this->getLocalPath())) {
       array_shift($path);
       return url('system/files/styles/' . implode('/', $path), array('absolute' => true));
     }
-    
+
     $url = 'http://' . $this->bucket . '.s3.amazonaws.com/' . $this->getLocalPath();
     return $url;
   }
@@ -152,7 +152,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
     if($this->getS3()) {
       $left = '';
       $right = '';
-      
+
       if($this->objectExists($this->uri)) {
         $object = $this->getObject($this->uri)->body;
         $left = substr($object, 0, $this->position);
@@ -165,14 +165,14 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
       ));
       if($response->isOK()) {
        $this->position += strlen($data);
-       
+
        // update object cache
        $object_cache = $this->getObject($this->uri);
        $object_cache->body = $left . $data . $right;
        $object_cache->acl = AmazonS3::ACL_PUBLIC;
        $this->setObject($object_cache);
-       
-       return strlen($data); 
+
+       return strlen($data);
       }
     }
     return FALSE;
@@ -181,7 +181,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
   public function stream_eof() {
     if($this->s3 && $this->s3->if_object_exists($this->bucket, $this->getLocalPath())) {
       $object = $this->s3->get_object($this->bucket, $this->getLocalPath())->body;
-      return $this->position >= strlen($object); 
+      return $this->position >= strlen($object);
     }
     return TRUE;
   }
@@ -199,7 +199,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
         return FALSE;
       case SEEK_CUR:
         if ($offset >= 0) {
-          $this->position += $offset;    
+          $this->position += $offset;
           return TRUE;
         }
         return FALSE;
@@ -240,9 +240,9 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
       }
       return $response->isOK();
     }
-    return false;    
+    return false;
   }
- 
+
   public function rename($from_uri, $to_uri) {
     return false;
   }
@@ -260,10 +260,10 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
   }
 
   public function mkdir($uri, $mode, $options) {
-    
+
     $recursive = (bool) ($options & STREAM_MKDIR_RECURSIVE);
     $localpath = $this->getLocalPath($uri);
-    
+
     // s3 has no concept of directories, but we emulate it by creating an object of size 0 with a trailing "/"
     if($this->getS3()) {
       $response = $this->getS3()->create_object($this->bucket, $localpath . '/', array('body' => ''));
@@ -277,7 +277,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
   public function rmdir($uri, $options) {
     $localpath = $this->getLocalPath($uri);
     $s3 = $this->getS3();
-    
+
     $objects = $s3->get_object_list($this->bucket, array('prefix' => $localpath));
     foreach($objects as $object) {
       $s3->batch()->delete_object($this->bucket, $object);
@@ -311,10 +311,14 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
   public function dir_closedir() {
     return true;
   }
-    
+
   protected function getLocalPath($uri = NULL) {
     if (!isset($uri)) {
       $uri = $this->uri;
+    }
+
+    if (trim($uri) == 's3:') { //special case fix
+      $uri = 's3://';
     }
 
     $path  = str_replace('s3://', '', $uri);
@@ -329,12 +333,12 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
     $url = 'http://' . $this->bucket . '.s3.amazonaws.com';
     return $url;
   }
-  
+
   protected function setObject($object) {
     $this->object = $object;
     $this->object_exists = true;
   }
-  
+
   /**
    * Lazy loads the current object
    */
@@ -352,7 +356,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
     $this->object = null;
     $this->object_exists = null;
   }
-  
+
   protected function objectExists($uri) {
     if($this->object_exists == null && $this->getS3()) {
       $this->object_exists = $this->getS3()->if_object_exists($this->bucket, $this->getLocalPath($uri));
@@ -365,7 +369,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
       $key = variable_get('aws_key', '');
       $secret_key = variable_get('aws_secret_key', '');
       $bucket = variable_get('amazons3_bucket', '');
-    
+
       if(!libraries_load('awssdk') && !isset($key) && !isset($secret_key) && !isset($bucket)) {
         drupal_set_message('Unable to load the AWS SDK. Please check you have installed the library correctly and configured your S3 credentials.'. 'error');
       }
@@ -384,15 +388,21 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
     }
     return $this->s3;
   }
-  
+
   public function _stat($uri = null) {
-    
+
     if($uri == null) {
       $uri = $this->uri;
     }
     $path = $this->getLocalPath($uri);
+
+    if (!$path) {
+      //special case; it's the bucket itself. should be TRUE
+      return TRUE;
+    }
+
     if($this->getS3() && ($this->getS3()->if_object_exists($this->bucket, $path) || $this->_is_dir($uri))) {
-      
+
       $mode = 0100000; // S_IFREG indicating file
       $mode |= 0777; // everything is writeable
       $stat = array(
@@ -423,7 +433,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
           'blksize' => 0,
           'blocks' => 0,
       );
-      
+
       // check if directory
       if($this->_is_dir($uri)) {
         $stat['mode'] = 0040000; // S_IFDIR indicating directory
@@ -447,7 +457,7 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
 
     return false;
   }
-  
+
   public function _is_dir($uri = null) {
     if($uri == null) {
       $uri = $this->uri;
@@ -465,5 +475,5 @@ class AmazonS3StreamWrapper implements DrupalStreamWrapperInterface {
     }
     return false;
   }
-  
+
 }
