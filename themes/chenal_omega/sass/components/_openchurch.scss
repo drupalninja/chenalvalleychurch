@@ -1,0 +1,119 @@
+
+// Override layout
+body {
+  .l-header, .l-main, .l-footer {
+    max-width: 960px;
+  }
+
+  .l-region--navigation {
+  }
+
+  @media (min-width: 44em) {
+    .l-branding {
+      width: 25%;
+    }
+    .l-region--header {
+      margin: 60px 0 40px;
+      width: 73%;
+
+      .block {
+        float: right;
+      }
+    }
+    .l-region--navigation {
+      clear: right;
+      float: right;
+      width: 73%;
+    }
+  }
+
+  @media (min-width: 70em) {
+    .l-branding {
+      width: 25%;
+    }
+  }
+
+  // Social Icons
+  #block-menu-menu-social-links {
+    .menu {
+      margin: 0;
+      padding: 0;
+
+      .leaf {
+        list-style: none;
+        display: inline;
+        margin: 0;
+        padding: 0;
+
+        a {
+          display: block;
+          float: left;
+          height: 40px;
+          width: 40px;
+          text-indent: -5000px;
+          overflow: hidden;
+          background: #84ced7 url(../images/social-icons.png) -80px 0;
+        }
+      }
+
+      li.first a {
+        background-position: -40px 0;
+      }
+
+      li.last a {
+        background-position: 0 0;
+      }
+    }
+  }
+
+  // Search form
+  #search-block-form {
+    input.form-text {
+      border: none;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      width: 300px;
+      font: 12px/20px Arial, Helvetica, sans-serif;
+      height: 40px;
+      padding: 10px 55px 10px 15px;
+    }
+
+    input.form-submit {
+      background: #fff url(../images/search-icon.png) no-repeat center center;
+      width: 40px;
+      height: 40px;
+      text-indent: -5000px;
+      overflow: hidden;
+      border: 0;
+    }
+
+    input.form-submit:hover {
+      background-color: #efefef;
+    }
+  }
+
+  .l-page {
+    background: #f7f7f7;
+    //background: #ccc;
+  }
+
+  .l-main {
+    .block {
+      margin-bottom: 50px;
+
+      .block__content {
+        background: #fff;
+        padding: 15px 16px 29px;
+      }
+    }
+
+    .l-content article {
+      background: #fff;
+      padding: 15px 16px 29px;
+    }
+  }
+}
