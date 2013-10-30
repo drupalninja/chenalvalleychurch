@@ -43,6 +43,9 @@
  *
  * @ingroup themeable
  */
+
+// Add clearfix
+$content_attributes = str_replace('class="', 'class="clearfix ', $content_attributes);
 ?>
 <div<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>

@@ -435,6 +435,21 @@ body .block.view-map-directions .inner {
 /*************************************
   Homepage Rotator
 *************************************/
+#openchurch-homepage-rotator div.view-openchurch-homepage-rotator {
+  position: relative; z-index: 1;
+}
+  #openchurch-homepage-rotator .views-slideshow-controls-top {
+    position: absolute; bottom: 20px; right: 2.5%; z-index: 100; text-align: right;
+  }
+    #openchurch-homepage-rotator .views-slideshow-controls-top div { display: inline; }
+    #openchurch-homepage-rotator .views-slideshow-controls-top .views-content-counter {
+      background: #efefef; font-weight: bold; padding: .4em .6em; cursor: pointer;
+      margin-left: 7px;
+    }
+    #openchurch-homepage-rotator .views-slideshow-controls-top .active .views-content-counter {
+      background: #bbb;
+    }
+
 #openchurch-homepage-rotator div.views-slideshow-cycle-main-frame-row-item img {
   width: 100%;
   height: auto;
