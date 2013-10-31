@@ -5,6 +5,14 @@ body {
     max-width: 960px;
   }
 
+  .l-header {
+    text-align: center;
+
+    .site-logo img {
+      width: 30%;
+    }
+  }
+
   .l-region--navigation {
   }
 
@@ -19,48 +27,17 @@ body {
     }
   }
 
-  @media (min-width: 44em) {
-    .l-branding {
-      width: 25%;
-    }
-    .l-region--header {
-      margin: 60px 0 40px;
-      width: 73%;
-
-      .block {
-        float: right;
-      }
-    }
-    .l-region--navigation {
-      clear: right;
-      float: right;
-      width: 73%;
-    }
-
-    .l-footer {
-      .block {
-        width: 32%;
-        float: left;
-        margin-right: 2%;
-        //min-height: 212px;
-      }
-      .block:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  @media (min-width: 70em) {
-    .l-branding {
-      width: 25%;
-    }
-  }
-
   // Social Icons
   #block-menu-menu-social-links {
+    width: 80%;
+    background: #84CED7;
+    margin: 0 auto;
+    height: 40px;
+
     .menu {
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
+      width: 120px;
 
       .leaf {
         list-style: none;
@@ -97,12 +74,11 @@ body {
       -webkit-box-sizing: border-box;
       -o-box-sizing: border-box;
       box-sizing: border-box;
-      display: block;
-      float: left;
-      width: 300px;
+      width: 80%;
       font: 12px/20px Arial, Helvetica, sans-serif;
       height: 40px;
       padding: 10px 55px 10px 15px;
+      display: inline;
     }
 
     input.form-submit {
@@ -112,6 +88,9 @@ body {
       text-indent: -5000px;
       overflow: hidden;
       border: 0;
+      display: inline;
+      position: absolute;
+      right: 10%;
     }
 
     input.form-submit:hover {
@@ -137,6 +116,75 @@ body {
     .l-content article {
       background: #fff;
       padding: 15px 16px 29px;
+    }
+  }
+
+  @media (min-width: 44em) {
+    .l-branding {
+      width: 25%;
+    }
+
+    .l-header {
+      text-align: center;
+
+      .site-logo img {
+        width: inherit;
+      }
+    }
+
+    .l-region--header {
+      margin: 60px 0 40px;
+      width: 73%;
+
+      .block {
+        float: right;
+      }
+    }
+    .l-region--navigation {
+      clear: right;
+      float: right;
+      width: 73%;
+    }
+
+    .l-footer {
+      .block {
+        width: 32%;
+        float: left;
+        margin-right: 2%;
+        //min-height: 212px;
+      }
+      .block:last-child {
+        margin-right: 0;
+      }
+    }
+
+    // Search form
+    #search-block-form {
+      input.form-text {
+        display: block;
+        float: left;
+        width: 300px;
+      }
+
+      input.form-submit {
+        position: static;
+        right: 0;
+      }
+    }
+
+    // Social Icons
+    #block-menu-menu-social-links {
+      width: 120px;
+      margin: 0;
+
+      .menu {
+        margin: 0;
+      }
+    }
+  }
+  @media (min-width: 70em) {
+    .l-branding {
+      width: 25%;
     }
   }
 }
