@@ -105,8 +105,6 @@ body {
 
   .l-main {
     .block {
-      margin-bottom: 50px;
-
       .block__content {
         background: #fff;
         padding: 15px 16px 29px;
@@ -155,6 +153,12 @@ body {
       }
       .block:last-child {
         margin-right: 0;
+      }
+    }
+
+    .l-main {
+      .block {
+        margin-bottom: 50px;
       }
     }
 
