@@ -22,6 +22,14 @@ body .block.view-map-directions .inner {
   padding: 1px 12px 0; font-size: 1.3em;
 }
 
+/*************************************
+  Latest Podcast Block
+*************************************/
+#block-views-openchurch-latest-podcast-block {
+  .views-field-title {
+    font-weight: bold;
+  }
+}
 
 /*************************************
   Podcasts
