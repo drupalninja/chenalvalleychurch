@@ -1,0 +1,153 @@
+name = OpenChurch
+description = OpenChurch Distribution
+
+core = 7.x
+
+; Core
+
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+;dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = overlay
+dependencies[] = path
+dependencies[] = php
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = statistics
+dependencies[] = syslog
+dependencies[] = taxonomy
+;dependencies[] = toolbar
+
+
+; Contrib
+
+dependencies[] = addressfield
+;dependencies[] = admin
+dependencies[] = admin_menu_toolbar
+dependencies[] = apps
+dependencies[] = backup_migrate
+dependencies[] = bulk_export
+dependencies[] = calendar
+dependencies[] = captcha
+dependencies[] = cck
+dependencies[] = content_taxonomy
+dependencies[] = content_taxonomy_autocomplete
+dependencies[] = context
+dependencies[] = context_ui
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = date_repeat
+dependencies[] = date_popup
+dependencies[] = date_tools
+dependencies[] = date_views
+dependencies[] = defaultcontent
+dependencies[] = email
+dependencies[] = entity
+dependencies[] = features
+dependencies[] = fe_nodequeue
+dependencies[] = filefield_sources
+dependencies[] = file_styles
+dependencies[] = fontyourface
+dependencies[] = fontyourface_ui
+dependencies[] = fusion_accelerator
+dependencies[] = fusion_apply_ui
+dependencies[] = google_fonts_api
+dependencies[] = imce
+dependencies[] = imce_wysiwyg
+dependencies[] = libraries
+dependencies[] = lightbox2
+dependencies[] = link
+dependencies[] = media
+dependencies[] = media_vimeo
+dependencies[] = media_youtube
+dependencies[] = menu_block
+dependencies[] = menu_breadcrumb
+dependencies[] = metatag
+dependencies[] = nodequeue
+dependencies[] = node_reference
+dependencies[] = page_manager
+dependencies[] = page_title
+dependencies[] = panels
+dependencies[] = panels_ipe
+dependencies[] = pathauto
+dependencies[] = pathologic
+dependencies[] = plup
+dependencies[] = plupload
+dependencies[] = references
+dependencies[] = references_dialog
+dependencies[] = recaptcha
+dependencies[] = rss_category
+dependencies[] = rss_creator
+dependencies[] = rss_date
+dependencies[] = rss_enclosure
+dependencies[] = rss_georss
+dependencies[] = rules
+dependencies[] = rules_admin
+dependencies[] = strongarm
+dependencies[] = styles
+dependencies[] = styles_ui
+dependencies[] = tinynav
+dependencies[] = token
+dependencies[] = user_reference
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_php
+dependencies[] = views_slideshow
+dependencies[] = views_slideshow_cycle
+dependencies[] = views_ui
+dependencies[] = webform
+dependencies[] = wysiwyg
+
+; Custom 
+
+
+;Features
+
+dependencies[] = openchurch_ministry
+dependencies[] = openchurch_ministry_demo_content
+dependencies[] = openchurch_blog
+dependencies[] = openchurch_blog_demo_content
+dependencies[] = openchurch_bulletin
+dependencies[] = openchurch_bulletin_demo_content
+dependencies[] = openchurch_events
+dependencies[] = openchurch_events_demo_content
+dependencies[] = openchurch_gallery
+dependencies[] = openchurch_gallery_demo_content
+dependencies[] = openchurch_giving
+dependencies[] = openchurch_giving_demo_content
+dependencies[] = openchurch_homepage_rotator
+dependencies[] = openchurch_homepage_rotator_demo_content
+dependencies[] = openchurch_image
+dependencies[] = openchurch_podcast
+dependencies[] = openchurch_podcast_demo_content
+dependencies[] = openchurch_social
+dependencies[] = openchurch_staff
+dependencies[] = openchurch_staff_demo_content
+dependencies[] = openchurch_video
+dependencies[] = openchurch_video_demo_content
+dependencies[] = openchurch_defaults
+dependencies[] = openchurch_defaults_demo_content
+dependencies[] = wysiwyg_iframe
+
+files[] = openchurch.profile
+files[] = openchurch.install
+
+; Information added by drupal.org packaging script on 2013-10-28
+version = "7.x-1.11-beta14"
+core = "7.x"
+project = "openchurch"
+datestamp = "1383002127"
+

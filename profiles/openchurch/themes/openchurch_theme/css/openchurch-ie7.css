@@ -1,0 +1,25 @@
+
+/** ie7 fixes **/
+
+#block-superfish-1 ul.sf-menu li li {
+  overflow: hidden;
+}
+  #block-superfish-1 ul.sf-menu li li a,
+  #block-superfish-1 ul.sf-menu li li a.active,
+  #block-superfish-1 ul.sf-menu li li a:visited {
+    width: 100%; padding-right: 0;
+  }
+
+  
+.header-group {
+  height: 121px;
+}
+
+/**
+ * Events list page filter fix
+ */
+.openchurch-events-list .view-filters {
+  margin-top: -3px; top: 0;
+}
+
+body.front .footer { margin-top: 5px; }
