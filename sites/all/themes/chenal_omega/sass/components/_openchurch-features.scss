@@ -49,9 +49,29 @@ body .block.view-map-directions .inner {
     font-size: 1.6em; position: absolute; left: 0; top: 2px;
   }
 
-  .openchurch-podcasts .views-field-field-oc-audio {
-    font-weight: bold; position: absolute; top: 0; right: 0;
+  .openchurch-podcasts .views-field-field-oc-audio,
+  .openchurch-podcasts .views-field-title-1 {
+    font-weight: bold;
     background: #efefef; padding: .2em .4em;
+    margin-top: 5px;
+
+    a {
+      display: block;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .openchurch-podcasts .views-field-title-1 {
+    background: #a3d183;
+
+    a {
+      color: #fff;
+    }
+
+    a:hover {
+      color: #333;
+    }
   }
 
   .openchurch-podcasts .views-field-title {
@@ -67,6 +87,66 @@ body .block.view-map-directions .inner {
     .openchurch-podcasts .views-field-body span.views-label {
       font-weight: bold;
     }
+
+  // Podcast detail page tablet+
+  @media (min-width: 44em) {
+
+    .openchurch-podcasts .views-field-field-oc-audio {
+      position: absolute; top: 30px; right: 0;
+    }
+
+    .openchurch-podcasts .views-field-title-1 {
+      position: absolute; top: 0; right: 0;
+    }
+  }
+
+  // Podcast detail page
+  .node--openchurch-podcast {
+    .field--name-field-oc-image {
+      display: inline;
+
+      div {
+        display: inline;
+      }
+
+      img {
+        float: left;
+        margin: 0 10px 10px 0;
+      }
+    }
+
+    .field--name-body {
+      clear: both;
+      margin-top: 10px;
+    }
+
+    .jp-audio {
+      width: 100%;
+
+      a {
+        transition: inherit;
+        -o-transition: inherit;
+        -webkit-transition: inherit;
+      }
+
+      .jp-mute, .jp-volume-bar {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 44em) {
+    // Podcast detail page tablet+
+    body {
+      .node--openchurch-podcast .jp-audio {
+        width: 420px;
+
+        .jp-mute, .jp-volume-bar {
+          display: inline;
+        }
+      }
+    }
+  }
 
 /*************************************
   Giving List
