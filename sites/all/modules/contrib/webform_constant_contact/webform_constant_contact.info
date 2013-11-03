@@ -1,0 +1,15 @@
+name = Webform Constant Contact
+description = Creates a Constant Contact Email component for use in your webforms.
+package = Webform
+core = 7.x
+files[] = webform_constant_contact.inc
+files[] = webform_constant_contact.module
+version = "7.x-1.0-alpha1"
+dependencies[] = webform
+dependencies[] = constant_contact
+; Information added by drupal.org packaging script on 2013-05-13
+version = "7.x-1.0"
+core = "7.x"
+project = "webform_constant_contact"
+datestamp = "1368458417"
+

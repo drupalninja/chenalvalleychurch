@@ -933,7 +933,7 @@ body .block.view-map-directions .inner {
   background: #bbb; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch-features\.scss}line{font-family:\00003544}}
-#openchurch-homepage-rotator div.views-slideshow-cycle-main-frame-row-item img {
+#openchurch-homepage-rotator .views-field-field-oc-image img {
   width: 100%;
   height: auto; }
 
