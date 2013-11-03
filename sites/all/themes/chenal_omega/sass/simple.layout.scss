@@ -60,11 +60,11 @@ $desk: 70em 16; // At 70em use 16 columns.
   .has-sidebar-second,
   .has-two-sidebars {
     .l-content {
-      @include span-columns(9, 12); // Span 8 out of 12 columns.
+      @include span-columns(8, 12);
     }
     .l-region--sidebar-first,
     .l-region--sidebar-second {
-      @include span-columns(3 omega, 12); // Span the last (omega) 4 columns of 12.
+      @include span-columns(4 omega, 12);
     }
     .l-region--sidebar-second {
       clear: right;
@@ -88,18 +88,18 @@ $desk: 70em 16; // At 70em use 16 columns.
 
   .has-sidebar-first {
     .l-content {
-      @include span-columns(12 omega, 16); // Span the last (omega) 12 columns of 16.
+      @include span-columns(10 omega, 16); // Span the last (omega) 12 columns of 16.
     }
     .l-region--sidebar-first {
-      @include span-columns(4, 16); // Span 4 out of 16 columns.
+      @include span-columns(6, 16); // Span 4 out of 16 columns.
     }
   }
   .has-sidebar-second {
     .l-content {
-      @include span-columns(12, 16); // Span 12 out of 16 columns.
+      @include span-columns(11, 16); // Span 12 out of 16 columns.
     }
     .l-region--sidebar-second {
-      @include span-columns(4 omega, 16); // Span the last (omega) 4 columns of 16.
+      @include span-columns(5 omega, 16); // Span the last (omega) 4 columns of 16.
       clear: none;
     }
   }

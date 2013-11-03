@@ -58,7 +58,7 @@
   .has-sidebar-first .l-content,
   .has-sidebar-second .l-content,
   .has-two-sidebars .l-content {
-    width: 74.57627%;
+    width: 66.10169%;
     float: left;
     margin-right: 1.69492%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000366}}
@@ -68,7 +68,7 @@
   .has-sidebar-second .l-region--sidebar-second,
   .has-two-sidebars .l-region--sidebar-first,
   .has-two-sidebars .l-region--sidebar-second {
-    width: 23.72881%;
+    width: 32.20339%;
     float: right;
     margin-right: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000369}}
@@ -97,23 +97,23 @@
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000390}}
   .has-sidebar-first .l-content {
-    width: 74.68354%;
+    width: 62.02532%;
     float: right;
     margin-right: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000393}}
   .has-sidebar-first .l-region--sidebar-first {
-    width: 24.05063%;
+    width: 36.70886%;
     float: left;
     margin-right: 1.26582%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000398}}
   .has-sidebar-second .l-content {
-    width: 74.68354%;
+    width: 68.35443%;
     float: left;
     margin-right: 1.26582%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\00003101}}
   .has-sidebar-second .l-region--sidebar-second {
-    width: 24.05063%;
+    width: 30.37975%;
     float: right;
     margin-right: 0;
     clear: none; }
