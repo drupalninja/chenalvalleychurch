@@ -32,6 +32,10 @@ $desk: 70em 16; // At 70em use 16 columns.
   margin-bottom: $vert-spacing-unit;
 }
 
+body .l-header {
+  padding-left: 0;
+}
+
 .l-region--highlighted,
 .l-region--help,
 .l-region--sidebar-first,

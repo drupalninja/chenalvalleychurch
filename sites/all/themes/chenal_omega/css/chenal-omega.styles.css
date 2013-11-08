@@ -19,7 +19,7 @@ body.front #main-title-wrapper {
   margin-bottom: 20px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/base\/_typography\.scss}line{font-family:\0000316}}
   .title-wrapper h1, .title-wrapper h2, .title-wrapper h3 {
-    background: #404040;
+    background: #786f64;
     display: inline-block;
     padding: 4px 15px 6px;
     font-size: 18px;
@@ -1106,7 +1106,7 @@ body .l-main .l-content article {
 @media (min-width: 44em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003129}}
   body .l-branding {
-    width: 25%; }
+    width: 24%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003133}}
   body .l-header {
     text-align: center; }
@@ -1155,4 +1155,4 @@ body .l-main .l-content article {
 @media (min-width: 70em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003198}}
   body .l-branding {
-    width: 25%; } }
+    width: 24%; } }
