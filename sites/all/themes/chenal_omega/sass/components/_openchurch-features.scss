@@ -541,9 +541,31 @@ body .block.view-map-directions .inner {
       background: #bbb;
     }
 
-#openchurch-homepage-rotator .views-field-field-oc-image img {
-  width: 100%;
-  height: auto;
+#openchurch-homepage-rotator {
+  .views-field-field-oc-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  h3 {
+    margin: 0;
+    padding: .5em;
+    font-size: 20px;
+    background: #333;
+    color: #84ced7;
+
+    a {
+      color: #84ced7;
+
+      &:hover {
+        color: #efefef;
+      }
+    }
+  }
+
+  .views-field-field-short-desc {
+    padding: 1em;
+  }
 }
 
 /*************************************
@@ -609,3 +631,43 @@ body .block.view-map-directions .inner {
   .block-simplenews .feed-icon {
     position: absolute; right: 1.2em; bottom: .5em;
   }
+
+/*************************************
+  Facebook Block
+*************************************/
+.pane-chenal-facebook-chenal-facebook {
+  background: #fff;
+  margin-bottom: 20px;
+
+  .title-wrapper {
+    margin-bottom: 0;
+  }
+
+  img {
+    float: left;
+    margin: 0 15px 10px 0;
+    border: 1px solid #ccc;
+  }
+
+  .facebook-item {
+    border-bottom: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em;
+  }
+
+  .view-more {
+    background: #333;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    padding: .5em;
+
+    a {
+      color: #fff;
+
+      &:hover {
+        color: #efefef;
+      }
+    }
+  }
+}

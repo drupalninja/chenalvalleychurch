@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * chenal_facebook.module
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function chenal_facebook_block_info() {
+  $blocks = array();
+
+  $blocks['chenal_facebook'] = array(
+    'info' => t('Facebook Feed'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function chenal_facebook_block_view($delta = '') {
+  $block = array();
+  $content = '';
+
+  $url = 'https://www.facebook.com/chenalvalleychurch';
+
+  if (isset($url)) {
+    $feed_content = db_query_range('SELECT ai.* FROM {aggregator_item} as ai, {aggregator_feed} as af WHERE af.title = :title AND ai.fid = af.fid ORDER BY timestamp DESC', 0, 3, array(':title' => $node->title . " Facebook Feed"))->fetchAll();
+    foreach ($feed_content as $c => $item) {
+      $content .= $item->description;
+
+      if ($c == 1) {
+        break;
+      }
+    }
+
+    if ($content) {
+      $content .= '<div class="view-more">'.l('View More', $url, array('attributes' => array('target' => '_blank'))).'</div>';
+    }
+  }
+
+  switch ($delta) {
+    case 'chenal_facebook':
+      $block['subject'] = t('What\'s Happening On Facebook');
+      $block['content'] = $content;
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_node_cron().
+ */
+function chenal_facebook_cron() {
+  $url = 'https://www.facebook.com/chenalvalleychurch';
+
+  $options = array(
+    'method' => 'POST',
+    'data' => 'fb_profile_url='.urlencode($url),
+    'timeout' => 15,
+    'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
+  );
+
+  $facebook_id = '123692638995';//Chenal
+  $facebook_rss = 'https://www.facebook.com/feeds/page.php?format=atom10&id=' . $facebook_id;
+
+  $feed_content = db_query('SELECT * FROM {aggregator_feed} WHERE title = :title', array(':title' => $node->title . " Facebook Feed"))->fetchObject();
+  $feed = array('title' => t("@title Facebook Feed", array('@title' => $node->title)),
+    'url' => $facebook_rss,
+    'refresh' => 3600,
+    'block' => 4);
+  if (isset($feed_content->fid)) {
+    $feed['fid'] = $feed_content->fid;
+  }
+  aggregator_save_feed($feed);
+  // pull the first feed on initial creation, which means feed['fid'] will be blank
+  if (!isset($feed['fid'])) {
+    $feed_content = db_query('SELECT fid FROM {aggregator_feed} WHERE title = :title', array(':title' => $node->title . " Facebook Feed"))->fetchObject();
+    $feed['fid'] = $feed_content->fid;
+    aggregator_refresh(aggregator_feed_load($feed['fid']));
+  }
+}
+
+/**
+ * Implements hook_aggregator_process_info().
+ */
+function chenal_facebook_aggregator_process_info() {
+  return array(
+    'title' => t('Chenal Facebook processor'),
+    'description' => t('Process Facebook RSS specifically for Chenal.'),
+  );
+}
+
+/**
+ * Implements hook_aggregator_process().
+ */
+function chenal_facebook_aggregator_process($feed) {
+
+  // Override Youtube items
+  if (strstr($feed->url, 'facebook')) {
+    foreach ($feed->items as $c => $item) {
+      preg_match('/\<img class="img" src="([^"]+)/', $item['description'], $matches);
+
+      $img = $matches[1];
+      $img_class = $img ? '' : 'no-image';
+
+      $description = '<div class="facebook-item clearfix '.$img_class.'">';
+
+      $matches = array();
+
+      preg_match('/\<br\/\>\<br\/\><a href="([^"]+)/', $item['description'], $matches);
+
+      $link = $matches[1];
+
+      $matches = array();
+
+      if ($img) {
+        $description .= l(theme('image', array('path' => $img)), $link, array('html' => TRUE));
+      }
+
+      $description .= '<div class="description">' . strip_tags($item['description']) . '</div>';
+      $description .= '<div class="facebook-date">' . t('@interval ago.', array('@interval' => format_interval((REQUEST_TIME - $item['timestamp'])))) . '</div>';
+      $description .= '</div>';
+
+      db_query('UPDATE {aggregator_item} SET description = :description WHERE guid = :guid', array('description' => $description, 'guid' => $item['guid']));
+    }
+  }
+}
