@@ -862,7 +862,7 @@ body .block.view-map-directions .inner {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch-features\.scss}line{font-family:\00003496}}
 .openchurch-staff-list h3.title {
   background: #c6bfb5;
-  margin: 2em 0 0;
+  margin: 0;
   padding: 10px 13px; }
 
 /*************************************
@@ -1209,3 +1209,13 @@ body .l-main .l-content article {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003204}}
   body .l-branding {
     width: 24%; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003210}}
+.not-front .l-content .view {
+  padding: 1em;
+  background: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003215}}
+.l-content .pane-content .field--name-body {
+  background: #fff;
+  padding: 1em; }
