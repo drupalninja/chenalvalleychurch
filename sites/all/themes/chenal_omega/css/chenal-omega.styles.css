@@ -1217,7 +1217,7 @@ body .l-main .l-content article {
     margin-right: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003180}}
   body .l-main .block {
-    margin-bottom: 50px; }
+    margin-bottom: 30px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003187}}
   body #search-block-form input.form-text {
     display: block;
@@ -1252,3 +1252,7 @@ body .l-main .l-content article {
   padding: 1em;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_openchurch\.scss}line{font-family:\00003230}}
+.flexslider {
+  margin-bottom: 30px; }
