@@ -1214,7 +1214,7 @@ body .l-main .block .block__content {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 /* line 133, ../sass/components/_openchurch.scss */
-body .l-main .l-content article {
+body .l-main .l-content article, body .l-main .l-content .view-mode-full {
   background: #fff;
   padding: 15px 16px 29px;
   border-bottom-left-radius: 5px;
