@@ -4,7 +4,7 @@
  * Styling of the "simple" layout demonstrating the Compass grid extension Susy
  * and building mobile first layouts.
  ******************************************************************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000330}}
+/* line 30, ../sass/simple.layout.scss */
 .l-header,
 .l-main,
 .l-footer {
@@ -16,7 +16,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jrcallicott\/\.rvm\/gems\/ruby-2\.0\.0-p247\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+  /* line 38, ../../../../../../../../../Users/jrcallicott/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-header:after,
   .l-main:after,
   .l-footer:after {
@@ -24,11 +24,11 @@
     display: table;
     clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000335}}
+/* line 35, ../sass/simple.layout.scss */
 body .l-header {
   padding-left: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000342}}
+/* line 42, ../sass/simple.layout.scss */
 .l-region--highlighted,
 .l-region--help,
 .l-region--sidebar-first,
@@ -36,36 +36,36 @@ body .l-header {
   margin-bottom: 20px; }
 
 @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000349}}
+  /* line 49, ../sass/simple.layout.scss */
   .l-header,
   .l-main,
   .l-footer {
     max-width: 1190px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000353}}
+  /* line 53, ../sass/simple.layout.scss */
   .l-branding {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000356}}
+  /* line 56, ../sass/simple.layout.scss */
   .l-region--header {
     width: 66.10169%;
     float: right;
     margin-right: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000359}}
+  /* line 59, ../sass/simple.layout.scss */
   .l-region--navigation {
     clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000366}}
+  /* line 66, ../sass/simple.layout.scss */
   .has-sidebar-first .l-content,
   .has-sidebar-second .l-content,
   .has-two-sidebars .l-content {
     width: 66.10169%;
     float: left;
     margin-right: 1.69492%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000370}}
+  /* line 70, ../sass/simple.layout.scss */
   .has-sidebar-first .l-region--sidebar-first,
   .has-sidebar-first .l-region--sidebar-second,
   .has-sidebar-second .l-region--sidebar-first,
@@ -75,69 +75,69 @@ body .l-header {
     width: 32.20339%;
     float: right;
     margin-right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000373}}
+  /* line 73, ../sass/simple.layout.scss */
   .has-sidebar-first .l-region--sidebar-second,
   .has-sidebar-second .l-region--sidebar-second,
   .has-two-sidebars .l-region--sidebar-second {
     clear: right; } }
 @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000382}}
+  /* line 82, ../sass/simple.layout.scss */
   .l-header,
   .l-main,
   .l-footer {
     max-width: 1190px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000386}}
+  /* line 86, ../sass/simple.layout.scss */
   .l-branding {
     width: 36.70886%;
     float: left;
     margin-right: 1.26582%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000389}}
+  /* line 89, ../sass/simple.layout.scss */
   .l-region--header {
     width: 62.02532%;
     float: right;
     margin-right: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000394}}
+  /* line 94, ../sass/simple.layout.scss */
   .has-sidebar-first .l-content {
     width: 62.02532%;
     float: right;
     margin-right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\0000397}}
+  /* line 97, ../sass/simple.layout.scss */
   .has-sidebar-first .l-region--sidebar-first {
     width: 36.70886%;
     float: left;
     margin-right: 1.26582%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\00003102}}
+  /* line 102, ../sass/simple.layout.scss */
   .has-sidebar-second .l-content {
     width: 68.35443%;
     float: left;
     margin-right: 1.26582%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\00003105}}
+  /* line 105, ../sass/simple.layout.scss */
   .has-sidebar-second .l-region--sidebar-second {
     width: 30.37975%;
     float: right;
     margin-right: 0;
     clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\00003112}}
+  /* line 112, ../sass/simple.layout.scss */
   .has-two-sidebars .l-content {
     width: 49.36709%;
     float: left;
     margin-right: 1.26582%;
     margin-left: 25.31646%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\00003117}}
+  /* line 117, ../sass/simple.layout.scss */
   .has-two-sidebars .l-region--sidebar-first,
   .has-two-sidebars .l-region--sidebar-second {
     width: 24.05063%;
     float: left;
     margin-right: 1.26582%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\00003120}}
+  /* line 120, ../sass/simple.layout.scss */
   .has-two-sidebars .l-region--sidebar-first {
     margin-left: -75.94937%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/simple\.layout\.scss}line{font-family:\00003123}}
+  /* line 123, ../sass/simple.layout.scss */
   .has-two-sidebars .l-region--sidebar-second {
     float: right;
     margin-right: 0;
