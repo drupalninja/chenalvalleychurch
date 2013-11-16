@@ -19,6 +19,8 @@ body {
   .l-footer {
     .block {
       background: #c6bfb5;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
 
       .block__content {
         padding: 0 10px 0 15px;
@@ -122,12 +124,16 @@ body {
       .block__content {
         background: #c6bfb5;
         padding: 15px 16px 29px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
     }
 
     .l-content article {
       background: #fff;
       padding: 15px 16px 29px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
   }
 
@@ -210,9 +216,13 @@ body {
 .not-front .l-content .view {
   padding: 1em;
   background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .l-content .pane-content .field--name-body {
   background: #fff;
   padding: 1em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
