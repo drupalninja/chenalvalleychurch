@@ -86,7 +86,7 @@ body #superfish-1 {
     background: url(../images/link-border.png) right center no-repeat; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_navigation\.scss}line{font-family:\0000358}}
   body .sf-menu.sf-style-white > li > a:hover, body .sf-menu.sf-style-white > li > a.active {
-    color: #a5dad0; }
+    color: #333; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/chenalvalley\/sites\/all\/themes\/chenal_omega\/sass\/components\/_navigation\.scss}line{font-family:\0000363}}
   body .sf-menu.sf-style-white > li.last > a {
     background: none; }
