@@ -1,5 +1,11 @@
 (function ($) {
 
+  Drupal.behaviors.searchPlaceholder = {
+    attach: function (context, settings) {
+      $('.form-item-search-block-form .form-text').attr('placeholder', 'Search');
+    }
+  };
+
   Drupal.behaviors.chenalOmegaEqualHeights = {
     attach: function (context, settings) {
       equalheight('.l-footer .block');
