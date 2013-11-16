@@ -288,6 +288,43 @@ body .block.view-map-directions .inner {
       }
 
 /*************************************
+  Random Gallery Block
+*************************************/
+#block-views-openchurch-galleries-block-1 {
+  .block__content {
+    padding-bottom: 19px;
+  }
+
+  .views-field-title {
+    font-size: 1.2em;
+  }
+  .views-field-field-oc-thumb {
+    text-align: center;
+    margin-top: 10px;
+
+    img {
+      border: 3px solid #999;
+    }
+  }
+
+  .view-footer {
+    text-align: center;
+    padding: .5em;
+    background: #333;
+    margin-top: 10px;
+
+    a.more {
+      display: block;
+      color: #fff;
+
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+/*************************************
   Gallery Photos
 *************************************/
 .openchurch-gallery-photos {
