@@ -133,7 +133,7 @@ body {
 
     /* W3C Markup, IE10 Release Preview */
     background-image: linear-gradient(to top, #FFFFFF 0%, #EFEFEF 80%, #4D9D45 200%);
-    
+
   }
 
   .l-main {
@@ -206,11 +206,13 @@ body {
         display: block;
         float: left;
         width: 300px;
+        border-radius: 0;
       }
 
       input.form-submit {
         position: static;
         right: 0;
+        border-radius: 0;
       }
     }
 
