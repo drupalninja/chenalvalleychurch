@@ -233,7 +233,7 @@ body .block.view-map-directions .inner {
 
 /* line 53, ../sass/components/_openchurch-features.scss */
 .openchurch-podcasts .date {
-  font-size: 1.6em;
+  font-size: 1.2em;
   position: absolute;
   left: 0;
   top: 2px; }
@@ -264,13 +264,13 @@ body .block.view-map-directions .inner {
 
 /* line 82, ../sass/components/_openchurch-features.scss */
 .openchurch-podcasts .views-field-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   margin-bottom: .3em; }
 
 /* line 86, ../sass/components/_openchurch-features.scss */
 .openchurch-podcasts .views-field-field-oc-author {
-  font-size: 1.5em;
+  font-size: 1.1em;
   margin-bottom: .3em;
   color: #333; }
 
