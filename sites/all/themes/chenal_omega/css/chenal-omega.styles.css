@@ -6,7 +6,7 @@ img, media {
 /* line 1, ../sass/base/_typography.scss */
 body {
   color: #333;
-  font: 12px/20px Arial, Helvetica, sans-serif;
+  font: 13px/20px Arial, Helvetica, sans-serif;
   background: #fff; }
 
 /* line 8, ../sass/base/_typography.scss */
@@ -29,9 +29,10 @@ body.front #main-title-wrapper {
     margin: 0; }
   /* line 29, ../sass/base/_typography.scss */
   .title-wrapper h1 {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    background: #4d9d45; }
 
-/* line 34, ../sass/base/_typography.scss */
+/* line 35, ../sass/base/_typography.scss */
 a {
   text-decoration: none;
   color: #786f64;
@@ -40,13 +41,17 @@ a {
   -o-transition: 0.5s ease;
   -webkit-transition: 0.5s ease; }
 
-/* line 43, ../sass/base/_typography.scss */
+/* line 44, ../sass/base/_typography.scss */
 a:hover {
-  color: #a5dad0; }
+  color: #a3d183; }
 
-/* line 47, ../sass/base/_typography.scss */
+/* line 48, ../sass/base/_typography.scss */
 .block a:hover {
   color: #333; }
+
+/* line 52, ../sass/base/_typography.scss */
+footer {
+  font-size: .9em; }
 
 /* line 4, ../sass/components/_navigation.scss */
 body #superfish-1 {
@@ -85,52 +90,82 @@ body #superfish-1 {
   body .sf-menu.sf-style-white > li > a {
     letter-spacing: -1px;
     font-family: 'Glegoo', serif;
-    font-size: 12px;
+    font-size: 11px;
     padding: 15px 25px;
     background: url(../images/link-border.png) right center no-repeat; }
-  /* line 58, ../sass/components/_navigation.scss */
+  /* line 57, ../sass/components/_navigation.scss */
   body .sf-menu.sf-style-white > li > a:hover, body .sf-menu.sf-style-white > li > a.active {
     color: #333; }
   /* line 63, ../sass/components/_navigation.scss */
+  body .sf-menu.sf-style-white li.active-trail {
+    background: #a3d183; }
+    /* line 66, ../sass/components/_navigation.scss */
+    body .sf-menu.sf-style-white li.active-trail a {
+      color: #fff;
+      background: none; }
+  /* line 77, ../sass/components/_navigation.scss */
+  body .sf-menu.sf-style-white li:hover,
+  body .sf-menu.sf-style-white li.sfHover,
+  body .sf-menu.sf-style-white li.active a,
+  body .sf-menu.sf-style-white a:focus,
+  body .sf-menu.sf-style-white a:hover,
+  body .sf-menu.sf-style-white a:active,
+  body .sf-menu.sf-style-white.sf-navbar li li {
+    background: #c6bfb5; }
+    /* line 80, ../sass/components/_navigation.scss */
+    body .sf-menu.sf-style-white li:hover a,
+    body .sf-menu.sf-style-white li.sfHover a,
+    body .sf-menu.sf-style-white li.active a a,
+    body .sf-menu.sf-style-white a:focus a,
+    body .sf-menu.sf-style-white a:hover a,
+    body .sf-menu.sf-style-white a:active a,
+    body .sf-menu.sf-style-white.sf-navbar li li a {
+      color: #333;
+      background: none; }
+  /* line 86, ../sass/components/_navigation.scss */
   body .sf-menu.sf-style-white > li.last > a {
     background: none; }
-  /* line 68, ../sass/components/_navigation.scss */
+  /* line 91, ../sass/components/_navigation.scss */
   body .sf-menu.sf-style-white li.sfHover li a {
-    background: #a5dad0; }
-  /* line 72, ../sass/components/_navigation.scss */
+    background: #786f64;
+    color: #fff; }
+  /* line 96, ../sass/components/_navigation.scss */
   body .sf-menu.sf-style-white li.sfHover li a:hover, body .sf-menu.sf-style-white li.sfHover li a.active {
-    color: #333; }
-  /* line 77, ../sass/components/_navigation.scss */
+    color: #f2c418; }
+  /* line 101, ../sass/components/_navigation.scss */
   body .sf-menu.sf-style-white li li {
-    background: #a5dad0; }
-    /* line 80, ../sass/components/_navigation.scss */
+    background: #786f64; }
+    /* line 104, ../sass/components/_navigation.scss */
     body .sf-menu.sf-style-white li li .sf-sub-indicator {
       top: .8em; }
-    /* line 84, ../sass/components/_navigation.scss */
+    /* line 108, ../sass/components/_navigation.scss */
     body .sf-menu.sf-style-white li li a {
       color: #fff; } }
+@media (min-width: 46em) {
+  /* line 118, ../sass/components/_navigation.scss */
+  body .sf-menu.sf-style-white > li > a {
+    font-size: 12px; } }
 @media (min-width: 52em) {
-  /* line 94, ../sass/components/_navigation.scss */
+  /* line 128, ../sass/components/_navigation.scss */
   body .sf-menu.sf-style-white > li > a {
-    font-size: 15px; } }
-@media (min-width: 57em) {
-  /* line 104, ../sass/components/_navigation.scss */
+    font-size: 14px; } }
+@media (min-width: 61em) {
+  /* line 139, ../sass/components/_navigation.scss */
   body .sf-menu.sf-style-white > li > a {
-    font-size: 17px; } }
-@media (min-width: 60em) {
-  /* line 115, ../sass/components/_navigation.scss */
-  body .sf-menu.sf-style-white > li > a {
-    font-size: 18px;
+    font-size: 17px;
     padding: 25px 25px; } }
-/* line 124, ../sass/components/_navigation.scss */
+/* line 148, ../sass/components/_navigation.scss */
 .breadcrumb {
   margin: 0 0 20px; }
 
-/* line 131, ../sass/components/_navigation.scss */
-ul.tabs li a:hover {
-  background: #333; }
+/* line 153, ../sass/components/_navigation.scss */
+ul.tabs {
+  margin-top: 20px; }
+  /* line 156, ../sass/components/_navigation.scss */
+  ul.tabs li a:hover {
+    background: #333; }
 
-/* line 138, ../sass/components/_navigation.scss */
+/* line 163, ../sass/components/_navigation.scss */
 .tinynav {
   width: 80%;
   margin: 10px auto;
@@ -511,7 +546,7 @@ body .block.view-map-directions .inner {
   padding-bottom: 19px; }
 /* line 298, ../sass/components/_openchurch-features.scss */
 #block-views-openchurch-galleries-block-1 .views-field-title {
-  font-size: 1.2em; }
+  font-size: 1.1em; }
 /* line 301, ../sass/components/_openchurch-features.scss */
 #block-views-openchurch-galleries-block-1 .views-field-field-oc-thumb {
   text-align: center;
@@ -531,7 +566,7 @@ body .block.view-map-directions .inner {
     color: #fff; }
     /* line 320, ../sass/components/_openchurch-features.scss */
     #block-views-openchurch-galleries-block-1 .view-footer a.more:hover {
-      color: #ccc; }
+      color: #f2c418; }
 
 /*************************************
   Gallery Photos
@@ -997,10 +1032,10 @@ body .block.view-map-directions .inner {
   padding: .5em;
   font-size: 20px;
   background: #333;
-  color: #a5dad0; }
+  color: #a3d183; }
   /* line 618, ../sass/components/_openchurch-features.scss */
   #openchurch-homepage-rotator h3 a {
-    color: #a5dad0; }
+    color: #a3d183; }
     /* line 621, ../sass/components/_openchurch-features.scss */
     #openchurch-homepage-rotator h3 a:hover {
       color: #efefef; }
@@ -1119,7 +1154,7 @@ body.node-type-openchurch-video .node-openchurch-video .field-name-body {
       color: #fff; }
       /* line 731, ../sass/components/_openchurch-features.scss */
       .pane-chenal-facebook-chenal-facebook .view-more a:hover {
-        color: #efefef; }
+        color: #f2c418; }
 
 /* line 4, ../sass/components/_openchurch.scss */
 body .l-header, body .l-main, body .l-footer {
@@ -1149,7 +1184,7 @@ body #block-block-5 p {
 /* line 48, ../sass/components/_openchurch.scss */
 body #block-menu-menu-social-links {
   width: 80%;
-  background: #a5dad0;
+  background: #a3d183;
   margin: 0 auto;
   height: 40px; }
   /* line 54, ../sass/components/_openchurch.scss */
@@ -1171,7 +1206,7 @@ body #block-menu-menu-social-links {
         width: 40px;
         text-indent: -5000px;
         overflow: hidden;
-        background: #a5dad0 url(../images/social-icons.png) -80px 0; }
+        background: #a3d183 url(../images/social-icons.png) -80px 0; }
     /* line 76, ../sass/components/_openchurch.scss */
     body #block-menu-menu-social-links .menu li.first a {
       background-position: -40px 0; }
@@ -1206,87 +1241,99 @@ body #search-block-form input.form-submit:hover {
   background-color: #efefef; }
 /* line 118, ../sass/components/_openchurch.scss */
 body .l-page {
-  background: url(../images/body-pattern.gif); }
-/* line 125, ../sass/components/_openchurch.scss */
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
+  /* Opera */
+  background-image: -o-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, white), color-stop(0.8, #efefef), color-stop(2, #4d9d45));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to top, #ffffff 0%, #efefef 80%, #4d9d45 200%); }
+/* line 141, ../sass/components/_openchurch.scss */
 body .l-main .block .block__content {
   background: #c6bfb5;
   padding: 15px 16px 29px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
-/* line 133, ../sass/components/_openchurch.scss */
+/* line 149, ../sass/components/_openchurch.scss */
 body .l-main .l-content article, body .l-main .l-content .view-mode-full {
   background: #fff;
   padding: 15px 16px 29px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 @media (min-width: 44em) {
-  /* line 142, ../sass/components/_openchurch.scss */
+  /* line 158, ../sass/components/_openchurch.scss */
   body .l-branding {
-    width: 24%; }
-  /* line 146, ../sass/components/_openchurch.scss */
+    width: 28%; }
+  /* line 162, ../sass/components/_openchurch.scss */
   body .l-header {
     text-align: center; }
-    /* line 149, ../sass/components/_openchurch.scss */
+    /* line 165, ../sass/components/_openchurch.scss */
     body .l-header .site-logo img {
-      width: inherit; }
-  /* line 154, ../sass/components/_openchurch.scss */
+      width: inherit;
+      margin-top: 49px; }
+  /* line 171, ../sass/components/_openchurch.scss */
   body .l-region--header {
     margin: 60px 0 40px;
-    width: 73%; }
-    /* line 158, ../sass/components/_openchurch.scss */
+    width: 69%; }
+    /* line 175, ../sass/components/_openchurch.scss */
     body .l-region--header .block {
       float: right; }
-  /* line 162, ../sass/components/_openchurch.scss */
+  /* line 179, ../sass/components/_openchurch.scss */
   body .l-region--navigation {
     clear: right;
     float: right;
-    width: 73%; }
-  /* line 169, ../sass/components/_openchurch.scss */
+    width: 69%; }
+  /* line 186, ../sass/components/_openchurch.scss */
   body .l-footer .block {
     width: 32%;
     float: left;
     margin-right: 2%; }
-  /* line 175, ../sass/components/_openchurch.scss */
+  /* line 192, ../sass/components/_openchurch.scss */
   body .l-footer .block:last-child {
     margin-right: 0; }
-  /* line 181, ../sass/components/_openchurch.scss */
+  /* line 198, ../sass/components/_openchurch.scss */
   body .l-main .block {
     margin-bottom: 30px; }
-  /* line 188, ../sass/components/_openchurch.scss */
+  /* line 205, ../sass/components/_openchurch.scss */
   body #search-block-form input.form-text {
     display: block;
     float: left;
     width: 300px; }
-  /* line 194, ../sass/components/_openchurch.scss */
+  /* line 211, ../sass/components/_openchurch.scss */
   body #search-block-form input.form-submit {
     position: static;
     right: 0; }
-  /* line 201, ../sass/components/_openchurch.scss */
+  /* line 218, ../sass/components/_openchurch.scss */
   body #block-menu-menu-social-links {
     width: 120px;
     margin: 0; }
-    /* line 205, ../sass/components/_openchurch.scss */
+    /* line 222, ../sass/components/_openchurch.scss */
     body #block-menu-menu-social-links .menu {
       margin: 0; } }
 @media (min-width: 70em) {
-  /* line 211, ../sass/components/_openchurch.scss */
+  /* line 228, ../sass/components/_openchurch.scss */
   body .l-branding {
-    width: 24%; } }
+    width: 28%; } }
 
-/* line 217, ../sass/components/_openchurch.scss */
+/* line 234, ../sass/components/_openchurch.scss */
 .not-front .l-content .view {
   padding: 1em;
   background: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 
-/* line 224, ../sass/components/_openchurch.scss */
+/* line 241, ../sass/components/_openchurch.scss */
 .l-content .pane-content .field--name-body {
   background: #fff;
   padding: 1em;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 
-/* line 231, ../sass/components/_openchurch.scss */
+/* line 248, ../sass/components/_openchurch.scss */
 .flexslider {
   margin-bottom: 30px; }

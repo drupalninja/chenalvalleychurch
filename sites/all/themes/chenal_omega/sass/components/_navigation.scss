@@ -49,14 +49,37 @@ body {
       > a {
         letter-spacing: -1px;
         font-family: 'Glegoo', serif;
-        font-size: 12px;
+        font-size: 11px;
         padding: 15px 25px;
-
         background: url(../images/link-border.png) right center no-repeat;
       }
 
       > a:hover, > a.active {
         color: #333;
+      }
+    }
+
+    // top level hover
+    .sf-menu.sf-style-white li.active-trail {
+      background: #a3d183;
+
+      a {
+        color: #fff;
+        background: none;
+      }
+    }
+    .sf-menu.sf-style-white li:hover,
+    .sf-menu.sf-style-white li.sfHover,
+    .sf-menu.sf-style-white li.active a,
+    .sf-menu.sf-style-white a:focus,
+    .sf-menu.sf-style-white a:hover,
+    .sf-menu.sf-style-white a:active,
+    .sf-menu.sf-style-white.sf-navbar li li {
+      background: #c6bfb5;
+
+      a {
+        color: #333;
+        background: none;
       }
     }
 
@@ -66,16 +89,17 @@ body {
 
     .sf-menu.sf-style-white li.sfHover li {
       a {
-        background: #a5dad0;
+        background: #786f64;
+        color: #fff;
       }
 
       a:hover, a.active {
-        color: #333;
+        color: #f2c418;
       }
     }
 
     .sf-menu.sf-style-white li li {
-      background: #a5dad0;
+      background: #786f64;
 
       .sf-sub-indicator {
         top: .8em;
@@ -88,32 +112,32 @@ body {
   }
 }
 
-@media (min-width: 52em) {
+@media (min-width: 46em) {
   body {
     .sf-menu.sf-style-white > li {
       > a {
-        font-size: 15px;
+        font-size: 12px;
       }
     }
   }
 }
 
-@media (min-width: 57em) {
+@media (min-width: 52em) {
   body {
     .sf-menu.sf-style-white > li {
       > a {
-        font-size: 17px;
+        font-size: 14px;
       }
     }
   }
 }
 
 // Superfish Desktop
-@media (min-width: 60em) {
+@media (min-width: 61em) {
   body {
     .sf-menu.sf-style-white > li {
       > a {
-        font-size: 18px;
+        font-size: 17px;
         padding: 25px 25px;
       }
     }
@@ -127,6 +151,7 @@ body {
 
 // Tabs
 ul.tabs {
+  margin-top: 20px;
   li {
     a:hover {
       background: #333;

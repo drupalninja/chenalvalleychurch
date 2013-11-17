@@ -1,7 +1,7 @@
 body {
   //color: #b5b5b5;
   color: #333;
-  font: 12px/20px Arial, Helvetica, sans-serif;
+  font: 13px/20px Arial, Helvetica, sans-serif;
   background: #fff;
 }
 
@@ -28,6 +28,7 @@ body.front #main-title-wrapper {
 
   h1 {
     margin-bottom: 20px;
+    background: #4d9d45;
   }
 }
 
@@ -41,9 +42,13 @@ a {
 }
 
 a:hover {
-	color: #a5dad0;
+	color: #a3d183;
 }
 
 .block a:hover {
   color: #333;
+}
+
+footer {
+  font-size: .9em;
 }
