@@ -27,6 +27,18 @@ body {
         margin-bottom: 15px;
       }
     }
+
+    #copyright {
+      clear: both;
+      text-align: center;
+      margin-right: 15px;
+      float: left;
+      width: 100%;
+
+      h5 {
+        margin: 0;
+      }
+    }
   }
 
   // Location
@@ -192,6 +204,10 @@ body {
       .block:last-child {
         margin-right: 0;
       }
+
+      #copyright {
+        margin-top: 20px;
+      }
     }
 
     .l-main {
@@ -248,5 +264,5 @@ body {
 }
 
 .flexslider {
-  margin-bottom: 30px;
+  //margin-bottom: 30px;
 }
