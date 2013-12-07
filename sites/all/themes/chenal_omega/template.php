@@ -21,3 +21,34 @@ function chenal_omega_breadcrumb($variables) {
     return $output;
   }
 }
+
+/**
+ * Override theme_menu_link().
+ */
+function chenal_omega_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  if ($element['#title'] == 'Google +') {
+    $output .= '<span class="fa fa-google-plus"></span>';
+  }
+  elseif ($element['#title'] == 'Facebook') {
+    $output .= '<span class="fa fa-facebook"></span>';
+  }
+  elseif ($element['#title'] == 'Twitter') {
+    $output .= '<span class="fa fa-twitter"></span>';
+  }
+  elseif ($element['#title'] == 'Youtube') {
+    $output .= '<span class="fa fa-youtube"></span>';
+  }
+  elseif ($element['#title'] == 'Google Calendar') {
+    $output .= '<span class="fa fa-calendar"></span>';
+  }
+
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}

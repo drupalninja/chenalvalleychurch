@@ -1201,29 +1201,26 @@ body #block-menu-menu-social-links {
   body #block-menu-menu-social-links .menu {
     margin: 0 auto;
     padding: 0;
-    width: 120px; }
+    width: 100%; }
     /* line 71, ../sass/components/_openchurch.scss */
     body #block-menu-menu-social-links .menu .leaf {
       list-style: none;
       display: inline;
       margin: 0;
-      padding: 0; }
-      /* line 77, ../sass/components/_openchurch.scss */
+      padding: 0;
+      color: #fff;
+      font-size: 20px; }
+      /* line 79, ../sass/components/_openchurch.scss */
       body #block-menu-menu-social-links .menu .leaf a {
+        display: none; }
+      /* line 83, ../sass/components/_openchurch.scss */
+      body #block-menu-menu-social-links .menu .leaf span {
         display: block;
         float: left;
-        height: 40px;
         width: 40px;
-        text-indent: -5000px;
-        overflow: hidden;
-        background: #a3d183 url(../images/social-icons.png) -80px 0; }
-    /* line 88, ../sass/components/_openchurch.scss */
-    body #block-menu-menu-social-links .menu li.first a {
-      background-position: -40px 0; }
-    /* line 92, ../sass/components/_openchurch.scss */
-    body #block-menu-menu-social-links .menu li.last a {
-      background-position: 0 0; }
-/* line 100, ../sass/components/_openchurch.scss */
+        text-align: center;
+        margin-top: 11px; }
+/* line 96, ../sass/components/_openchurch.scss */
 body #search-block-form input.form-text {
   border: none;
   -moz-box-sizing: border-box;
@@ -1235,7 +1232,7 @@ body #search-block-form input.form-text {
   height: 40px;
   padding: 10px 55px 10px 15px;
   display: inline; }
-/* line 113, ../sass/components/_openchurch.scss */
+/* line 109, ../sass/components/_openchurch.scss */
 body #search-block-form input.form-submit {
   background: white url(../images/search-icon.png) no-repeat center center;
   width: 40px;
@@ -1246,10 +1243,10 @@ body #search-block-form input.form-submit {
   display: inline;
   position: absolute;
   right: 10%; }
-/* line 125, ../sass/components/_openchurch.scss */
+/* line 121, ../sass/components/_openchurch.scss */
 body #search-block-form input.form-submit:hover {
   background-color: #efefef; }
-/* line 130, ../sass/components/_openchurch.scss */
+/* line 126, ../sass/components/_openchurch.scss */
 body .l-page {
   /* IE10 Consumer Preview */
   background-image: -ms-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
@@ -1263,86 +1260,89 @@ body .l-page {
   background-image: -webkit-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
   /* W3C Markup, IE10 Release Preview */
   background-image: linear-gradient(to top, #ffffff 0%, #efefef 80%, #4d9d45 200%); }
-/* line 153, ../sass/components/_openchurch.scss */
+/* line 149, ../sass/components/_openchurch.scss */
 body .l-main .block .block__content {
   background: #c6bfb5;
   padding: 15px 16px 29px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
-/* line 161, ../sass/components/_openchurch.scss */
+/* line 157, ../sass/components/_openchurch.scss */
 body .l-main .l-content article, body .l-main .l-content .view-mode-full {
   background: #fff;
   padding: 15px 16px 29px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 @media (min-width: 44em) {
-  /* line 170, ../sass/components/_openchurch.scss */
+  /* line 166, ../sass/components/_openchurch.scss */
   body .l-branding {
     width: 28%; }
-  /* line 174, ../sass/components/_openchurch.scss */
+  /* line 170, ../sass/components/_openchurch.scss */
   body .l-header {
     text-align: center; }
-    /* line 177, ../sass/components/_openchurch.scss */
+    /* line 173, ../sass/components/_openchurch.scss */
     body .l-header .site-logo img {
       width: inherit;
       margin-top: 49px; }
-  /* line 183, ../sass/components/_openchurch.scss */
+  /* line 179, ../sass/components/_openchurch.scss */
   body .l-region--header {
     margin: 60px 0 40px;
     width: 69%; }
-    /* line 187, ../sass/components/_openchurch.scss */
+    /* line 183, ../sass/components/_openchurch.scss */
     body .l-region--header .block {
       float: right; }
-  /* line 191, ../sass/components/_openchurch.scss */
+  /* line 187, ../sass/components/_openchurch.scss */
   body .l-region--navigation {
     clear: right;
     float: right;
     width: 69%; }
-  /* line 198, ../sass/components/_openchurch.scss */
+  /* line 194, ../sass/components/_openchurch.scss */
   body .l-footer .block {
     width: 32%;
     float: left;
     margin-right: 2%; }
-  /* line 204, ../sass/components/_openchurch.scss */
+  /* line 200, ../sass/components/_openchurch.scss */
   body .l-footer .block:last-child {
     margin-right: 0; }
-  /* line 208, ../sass/components/_openchurch.scss */
+  /* line 204, ../sass/components/_openchurch.scss */
   body .l-footer #copyright {
     margin-top: 20px; }
-  /* line 214, ../sass/components/_openchurch.scss */
+  /* line 210, ../sass/components/_openchurch.scss */
   body .l-main .block {
     margin-bottom: 30px; }
-  /* line 221, ../sass/components/_openchurch.scss */
+  /* line 217, ../sass/components/_openchurch.scss */
   body #search-block-form input.form-text {
     display: block;
     float: left;
-    width: 300px;
+    width: 200px;
     border-radius: 0; }
-  /* line 228, ../sass/components/_openchurch.scss */
+  /* line 224, ../sass/components/_openchurch.scss */
   body #search-block-form input.form-submit {
     position: static;
     right: 0;
     border-radius: 0; }
-  /* line 236, ../sass/components/_openchurch.scss */
+  /* line 232, ../sass/components/_openchurch.scss */
   body #block-menu-menu-social-links {
-    width: 120px;
+    width: 164px;
     margin: 0; }
-    /* line 240, ../sass/components/_openchurch.scss */
+    /* line 236, ../sass/components/_openchurch.scss */
     body #block-menu-menu-social-links .menu {
       margin: 0; } }
 @media (min-width: 70em) {
-  /* line 246, ../sass/components/_openchurch.scss */
+  /* line 242, ../sass/components/_openchurch.scss */
   body .l-branding {
-    width: 28%; } }
+    width: 28%; }
+  /* line 248, ../sass/components/_openchurch.scss */
+  body #search-block-form input.form-text {
+    width: 300px; } }
 
-/* line 252, ../sass/components/_openchurch.scss */
+/* line 255, ../sass/components/_openchurch.scss */
 .not-front .l-content .view {
   padding: 1em;
   background: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 
-/* line 259, ../sass/components/_openchurch.scss */
+/* line 262, ../sass/components/_openchurch.scss */
 .l-content .pane-content .field--name-body {
   background: #fff;
   padding: 1em;
