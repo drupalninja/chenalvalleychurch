@@ -77,15 +77,23 @@ body {
         font-size: 20px;
 
         a {
-          display: none;
+          color: #fff;
+
+          &:hover {
+            color: #666;
+          }
         }
 
-        span {
+        span.fa {
           display: block;
           float: left;
           width: 40px;
           text-align: center;
           margin-top: 11px;
+        }
+
+        span.link {
+          display: none;
         }
       }
     }

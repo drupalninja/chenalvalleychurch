@@ -1212,15 +1212,21 @@ body #block-menu-menu-social-links {
       font-size: 20px; }
       /* line 79, ../sass/components/_openchurch.scss */
       body #block-menu-menu-social-links .menu .leaf a {
-        display: none; }
-      /* line 83, ../sass/components/_openchurch.scss */
-      body #block-menu-menu-social-links .menu .leaf span {
+        color: #fff; }
+        /* line 82, ../sass/components/_openchurch.scss */
+        body #block-menu-menu-social-links .menu .leaf a:hover {
+          color: #666; }
+      /* line 87, ../sass/components/_openchurch.scss */
+      body #block-menu-menu-social-links .menu .leaf span.fa {
         display: block;
         float: left;
         width: 40px;
         text-align: center;
         margin-top: 11px; }
-/* line 96, ../sass/components/_openchurch.scss */
+      /* line 95, ../sass/components/_openchurch.scss */
+      body #block-menu-menu-social-links .menu .leaf span.link {
+        display: none; }
+/* line 104, ../sass/components/_openchurch.scss */
 body #search-block-form input.form-text {
   border: none;
   -moz-box-sizing: border-box;
@@ -1232,7 +1238,7 @@ body #search-block-form input.form-text {
   height: 40px;
   padding: 10px 55px 10px 15px;
   display: inline; }
-/* line 109, ../sass/components/_openchurch.scss */
+/* line 117, ../sass/components/_openchurch.scss */
 body #search-block-form input.form-submit {
   background: white url(../images/search-icon.png) no-repeat center center;
   width: 40px;
@@ -1243,10 +1249,10 @@ body #search-block-form input.form-submit {
   display: inline;
   position: absolute;
   right: 10%; }
-/* line 121, ../sass/components/_openchurch.scss */
+/* line 129, ../sass/components/_openchurch.scss */
 body #search-block-form input.form-submit:hover {
   background-color: #efefef; }
-/* line 126, ../sass/components/_openchurch.scss */
+/* line 134, ../sass/components/_openchurch.scss */
 body .l-page {
   /* IE10 Consumer Preview */
   background-image: -ms-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
@@ -1260,89 +1266,89 @@ body .l-page {
   background-image: -webkit-linear-gradient(bottom, white 0%, #efefef 80%, #4d9d45 200%);
   /* W3C Markup, IE10 Release Preview */
   background-image: linear-gradient(to top, #ffffff 0%, #efefef 80%, #4d9d45 200%); }
-/* line 149, ../sass/components/_openchurch.scss */
+/* line 157, ../sass/components/_openchurch.scss */
 body .l-main .block .block__content {
   background: #c6bfb5;
   padding: 15px 16px 29px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
-/* line 157, ../sass/components/_openchurch.scss */
+/* line 165, ../sass/components/_openchurch.scss */
 body .l-main .l-content article, body .l-main .l-content .view-mode-full {
   background: #fff;
   padding: 15px 16px 29px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 @media (min-width: 44em) {
-  /* line 166, ../sass/components/_openchurch.scss */
+  /* line 174, ../sass/components/_openchurch.scss */
   body .l-branding {
     width: 28%; }
-  /* line 170, ../sass/components/_openchurch.scss */
+  /* line 178, ../sass/components/_openchurch.scss */
   body .l-header {
     text-align: center; }
-    /* line 173, ../sass/components/_openchurch.scss */
+    /* line 181, ../sass/components/_openchurch.scss */
     body .l-header .site-logo img {
       width: inherit;
       margin-top: 49px; }
-  /* line 179, ../sass/components/_openchurch.scss */
+  /* line 187, ../sass/components/_openchurch.scss */
   body .l-region--header {
     margin: 60px 0 40px;
     width: 69%; }
-    /* line 183, ../sass/components/_openchurch.scss */
+    /* line 191, ../sass/components/_openchurch.scss */
     body .l-region--header .block {
       float: right; }
-  /* line 187, ../sass/components/_openchurch.scss */
+  /* line 195, ../sass/components/_openchurch.scss */
   body .l-region--navigation {
     clear: right;
     float: right;
     width: 69%; }
-  /* line 194, ../sass/components/_openchurch.scss */
+  /* line 202, ../sass/components/_openchurch.scss */
   body .l-footer .block {
     width: 32%;
     float: left;
     margin-right: 2%; }
-  /* line 200, ../sass/components/_openchurch.scss */
+  /* line 208, ../sass/components/_openchurch.scss */
   body .l-footer .block:last-child {
     margin-right: 0; }
-  /* line 204, ../sass/components/_openchurch.scss */
+  /* line 212, ../sass/components/_openchurch.scss */
   body .l-footer #copyright {
     margin-top: 20px; }
-  /* line 210, ../sass/components/_openchurch.scss */
+  /* line 218, ../sass/components/_openchurch.scss */
   body .l-main .block {
     margin-bottom: 30px; }
-  /* line 217, ../sass/components/_openchurch.scss */
+  /* line 225, ../sass/components/_openchurch.scss */
   body #search-block-form input.form-text {
     display: block;
     float: left;
     width: 200px;
     border-radius: 0; }
-  /* line 224, ../sass/components/_openchurch.scss */
+  /* line 232, ../sass/components/_openchurch.scss */
   body #search-block-form input.form-submit {
     position: static;
     right: 0;
     border-radius: 0; }
-  /* line 232, ../sass/components/_openchurch.scss */
+  /* line 240, ../sass/components/_openchurch.scss */
   body #block-menu-menu-social-links {
     width: 164px;
     margin: 0; }
-    /* line 236, ../sass/components/_openchurch.scss */
+    /* line 244, ../sass/components/_openchurch.scss */
     body #block-menu-menu-social-links .menu {
       margin: 0; } }
 @media (min-width: 70em) {
-  /* line 242, ../sass/components/_openchurch.scss */
+  /* line 250, ../sass/components/_openchurch.scss */
   body .l-branding {
     width: 28%; }
-  /* line 248, ../sass/components/_openchurch.scss */
+  /* line 256, ../sass/components/_openchurch.scss */
   body #search-block-form input.form-text {
     width: 300px; } }
 
-/* line 255, ../sass/components/_openchurch.scss */
+/* line 263, ../sass/components/_openchurch.scss */
 .not-front .l-content .view {
   padding: 1em;
   background: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 
-/* line 262, ../sass/components/_openchurch.scss */
+/* line 270, ../sass/components/_openchurch.scss */
 .l-content .pane-content .field--name-body {
   background: #fff;
   padding: 1em;

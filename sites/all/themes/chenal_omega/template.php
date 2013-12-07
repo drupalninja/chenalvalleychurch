@@ -32,22 +32,31 @@ function chenal_omega_menu_link(array $variables) {
   if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
   }
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
 
-  if ($element['#title'] == 'Google +') {
-    $output .= '<span class="fa fa-google-plus"></span>';
+  if ($element['#theme'] == 'menu_link__menu_social_links') {
+
+    if ($element['#title'] == 'Google +') {
+      $element['#title'] .= '</span><span class="fa fa-google-plus"></span><span class="link">';
+    }
+    elseif ($element['#title'] == 'Facebook') {
+      $element['#title'] .= '</span><span class="fa fa-facebook"></span><span class="link">';
+    }
+    elseif ($element['#title'] == 'Twitter') {
+      $element['#title'] .= '</span><span class="fa fa-twitter"></span><span class="link">';
+    }
+    elseif ($element['#title'] == 'Youtube') {
+      $element['#title'] .= '</span><span class="fa fa-youtube"></span><span class="link">';
+    }
+    elseif ($element['#title'] == 'Google Calendar') {
+      $element['#title'] .= '</span><span class="fa fa-calendar"></span><span class="link">';
+    }
+
+    $element['#localized_options']['html'] = TRUE;
+
+    $output = l('<span class="link">'.$element['#title'], $element['#href'], $element['#localized_options']);
   }
-  elseif ($element['#title'] == 'Facebook') {
-    $output .= '<span class="fa fa-facebook"></span>';
-  }
-  elseif ($element['#title'] == 'Twitter') {
-    $output .= '<span class="fa fa-twitter"></span>';
-  }
-  elseif ($element['#title'] == 'Youtube') {
-    $output .= '<span class="fa fa-youtube"></span>';
-  }
-  elseif ($element['#title'] == 'Google Calendar') {
-    $output .= '<span class="fa fa-calendar"></span>';
+  else {
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   }
 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
