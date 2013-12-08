@@ -1,0 +1,10 @@
+//Webforms
+.node--webform--full input.form-text {
+  width: 100%;
+}
+
+@media (min-width: 44em) {
+  .node--webform--full input.form-text {
+    width: inherit;
+  }
+}

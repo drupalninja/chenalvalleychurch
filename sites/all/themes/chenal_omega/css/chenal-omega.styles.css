@@ -1,4 +1,12 @@
 /* No files to import found in abstractions/**\/* */
+/* line 2, ../sass/base/_forms.scss */
+.node--webform--full input.form-text {
+  width: 100%; }
+
+@media (min-width: 44em) {
+  /* line 7, ../sass/base/_forms.scss */
+  .node--webform--full input.form-text {
+    width: inherit; } }
 /* line 1, ../sass/base/_media.scss */
 img, media {
   max-width: 100%; }
