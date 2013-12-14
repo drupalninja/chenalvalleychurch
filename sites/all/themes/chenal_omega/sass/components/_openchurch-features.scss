@@ -240,7 +240,7 @@ body .block.view-map-directions .inner {
   }
 
 /*************************************
-  Blog Archives List
+  News Blogck
 *************************************/
 #block-views-openchurch-latest-blogs-block-1 {
   .views-field-title {
@@ -255,6 +255,10 @@ body .block.view-map-directions .inner {
     margin-bottom: 0;
     border-bottom: 0;
     padding-bottom: 0;
+  }
+
+  .block__content {
+    padding-bottom: 19px;
   }
 }
 
@@ -304,22 +308,6 @@ body .block.view-map-directions .inner {
 
     img {
       border: 3px solid #999;
-    }
-  }
-
-  .view-footer {
-    text-align: center;
-    padding: .5em;
-    background: #333;
-    margin-top: 10px;
-
-    a.more {
-      display: block;
-      color: #fff;
-
-      &:hover {
-        color: #f2c418;
-      }
     }
   }
 }

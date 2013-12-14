@@ -42,7 +42,7 @@ body {
 
     .sf-menu li:hover > ul,
     .sf-menu li.sfHover > ul {
-      top: 4.5em;
+      top: 41px;
     }
 
     .sf-menu.sf-style-white > li {
@@ -114,6 +114,10 @@ body {
 
 @media (min-width: 46em) {
   body {
+    .sf-menu li:hover > ul,
+    .sf-menu li.sfHover > ul {
+      top: 42px;
+    }
     .sf-menu.sf-style-white > li {
       > a {
         font-size: 12px;
@@ -123,6 +127,10 @@ body {
 }
 
 @media (min-width: 52em) {
+  .sf-menu li:hover > ul,
+    .sf-menu li.sfHover > ul {
+      top: 44px;
+    }
   body {
     .sf-menu.sf-style-white > li {
       > a {
@@ -135,6 +143,11 @@ body {
 // Superfish Desktop
 @media (min-width: 61em) {
   body {
+    .sf-menu li:hover > ul,
+    .sf-menu li.sfHover > ul {
+      top: 66px;
+    }
+
     .sf-menu.sf-style-white > li {
       > a {
         font-size: 17px;

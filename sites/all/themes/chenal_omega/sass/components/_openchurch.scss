@@ -277,3 +277,22 @@ body {
 .flexslider {
   //margin-bottom: 30px;
 }
+
+// Sidebar 'more' button
+.l-region--sidebar-second {
+  .view-footer {
+    text-align: center;
+    padding: .5em;
+    background: #333;
+    margin-top: 10px;
+
+    a.more {
+      display: block;
+      color: #fff;
+
+      &:hover {
+        color: #f2c418;
+      }
+    }
+  }
+}
