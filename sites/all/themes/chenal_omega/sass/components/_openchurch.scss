@@ -154,6 +154,8 @@ body {
 
   .l-main {
     .block {
+      margin-bottom: 15px;
+
       .block__content {
         background: #c6bfb5;
         padding: 15px 16px 29px;
@@ -284,7 +286,7 @@ body {
     text-align: center;
     padding: .5em;
     background: #333;
-    margin-top: 10px;
+    margin-top: 15px;
 
     a.more {
       display: block;
