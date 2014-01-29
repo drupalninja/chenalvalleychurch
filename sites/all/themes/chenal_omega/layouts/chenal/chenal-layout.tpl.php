@@ -54,7 +54,7 @@
     <?php print render($page['footer']); ?>
 
     <div id="copyright">
-      <h5>Copyright &copy; <?php print date('Y');?> Chenal Valley Church of Christ</h5>
+      <h5>Copyright &copy; <?php print date('Y');?> Chenal Valley Church, A Church of Christ</h5>
     </div>
   </footer>
 </div>
