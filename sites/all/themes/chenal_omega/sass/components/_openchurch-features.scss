@@ -499,18 +499,27 @@ body .block.view-map-directions .inner {
       background: #F9F9F9; padding: 10px;
     }
 
-  #openchurch-ministry-detail .upcoming-events,
-  #openchurch-ministry-detail .ministry-downloads {
+  #openchurch-ministry-detail .upcoming-events {
     margin-bottom: 1em;
   }
-  #openchurch-ministry-detail .upcoming-events h2.pane-title,
-  #openchurch-ministry-detail .ministry-downloads h2.pane-title {
+
+  #openchurch-ministry-detail .ministry-downloads {
+    margin: 2em 0 1em;
+  }
+
+  #openchurch-ministry-detail .ministry-downloads .pane-content {
+    padding: 1em;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  #openchurch-ministry-detail .upcoming-events h2.pane-title {
     background: whiteSmoke;
     border-bottom-color: #EFEFEF;
     padding: 10px 13px; margin: 0;
   }
-  #openchurch-ministry-detail .upcoming-events .pane-content,
-  #openchurch-ministry-detail .ministry-downloads .pane-content {
+  #openchurch-ministry-detail .upcoming-events .pane-content {
     background: #F9F9F9; padding: 10px;
   }
 
