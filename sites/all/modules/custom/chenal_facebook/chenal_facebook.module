@@ -68,7 +68,7 @@ function chenal_facebook_cron() {
   $facebook_id = '123692638995';//Chenal
   $facebook_rss = 'https://www.facebook.com/feeds/page.php?format=atom10&id=' . $facebook_id;
 
-  $feed_content = db_query('SELECT * FROM {aggregator_feed} WHERE title = :title', array(':title' => $node->title . " Facebook Feed"))->fetchObject();
+  $feed_content = db_query('SELECT * FROM {aggregator_feed} WHERE title = :title', array(':title' => " Facebook Feed"))->fetchObject();
   $feed = array('title' => t("@title Facebook Feed", array('@title' => $node->title)),
     'url' => $facebook_rss,
     'refresh' => 3600,
@@ -79,7 +79,7 @@ function chenal_facebook_cron() {
   aggregator_save_feed($feed);
   // pull the first feed on initial creation, which means feed['fid'] will be blank
   if (!isset($feed['fid'])) {
-    $feed_content = db_query('SELECT fid FROM {aggregator_feed} WHERE title = :title', array(':title' => $node->title . " Facebook Feed"))->fetchObject();
+    $feed_content = db_query('SELECT fid FROM {aggregator_feed} WHERE title = :title', array(':title' => " Facebook Feed"))->fetchObject();
     $feed['fid'] = $feed_content->fid;
     aggregator_refresh(aggregator_feed_load($feed['fid']));
   }
@@ -103,7 +103,7 @@ function chenal_facebook_aggregator_process($feed) {
   // Override Youtube items
   if (strstr($feed->url, 'facebook')) {
     foreach ($feed->items as $c => $item) {
-      preg_match('/\<img class="img" src="([^"]+)/', $item['description'], $matches);
+      preg_match('/(\<img class="img" src="[^\>]+\>)/', $item['description'], $matches);
 
       $img = $matches[1];
       $img_class = $img ? '' : 'no-image';
@@ -114,12 +114,12 @@ function chenal_facebook_aggregator_process($feed) {
 
       preg_match('/\<br\/\>\<br\/\><a href="([^"]+)/', $item['description'], $matches);
 
-      $link = $matches[1];
+      $link = 'http://facebook.com' . $matches[1];
 
       $matches = array();
 
       if ($img) {
-        $description .= l(theme('image', array('path' => $img)), $link, array('html' => TRUE));
+        $description .= l($img, $link, array('html' => TRUE));
       }
 
       $description .= '<div class="description">' . strip_tags($item['description']) . '</div>';
