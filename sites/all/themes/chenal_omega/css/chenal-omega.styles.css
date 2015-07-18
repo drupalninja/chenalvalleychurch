@@ -1144,22 +1144,12 @@ body.node-type-openchurch-video .node-openchurch-video .field-name-body {
 *************************************/
 /* line 696, ../sass/components/_openchurch-features.scss */
 .pane-chenal-facebook-chenal-facebook {
-  background: #fff;
+  margin-top: 10px;
   margin-bottom: 20px; }
   /* line 700, ../sass/components/_openchurch-features.scss */
-  .pane-chenal-facebook-chenal-facebook .title-wrapper {
-    margin-bottom: 0; }
+  .pane-chenal-facebook-chenal-facebook .pane-content {
+    text-align: center; }
   /* line 704, ../sass/components/_openchurch-features.scss */
-  .pane-chenal-facebook-chenal-facebook img {
-    float: left;
-    margin: 0 15px 10px 0;
-    border: 1px solid #ccc; }
-  /* line 710, ../sass/components/_openchurch-features.scss */
-  .pane-chenal-facebook-chenal-facebook .facebook-item {
-    border-bottom: 1px solid #ccc;
-    padding: 1em;
-    margin: 1em; }
-  /* line 716, ../sass/components/_openchurch-features.scss */
   .pane-chenal-facebook-chenal-facebook .view-more {
     background: #333;
     display: block;
@@ -1168,10 +1158,10 @@ body.node-type-openchurch-video .node-openchurch-video .field-name-body {
     padding: .5em;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
-    /* line 725, ../sass/components/_openchurch-features.scss */
+    /* line 713, ../sass/components/_openchurch-features.scss */
     .pane-chenal-facebook-chenal-facebook .view-more a {
       color: #fff; }
-      /* line 728, ../sass/components/_openchurch-features.scss */
+      /* line 716, ../sass/components/_openchurch-features.scss */
       .pane-chenal-facebook-chenal-facebook .view-more a:hover {
         color: #f2c418; }
 

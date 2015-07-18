@@ -694,23 +694,11 @@ body .block.view-map-directions .inner {
   Facebook Block
 *************************************/
 .pane-chenal-facebook-chenal-facebook {
-  background: #fff;
+  margin-top: 10px;
   margin-bottom: 20px;
 
-  .title-wrapper {
-    margin-bottom: 0;
-  }
-
-  img {
-    float: left;
-    margin: 0 15px 10px 0;
-    border: 1px solid #ccc;
-  }
-
-  .facebook-item {
-    border-bottom: 1px solid #ccc;
-    padding: 1em;
-    margin: 1em;
+  .pane-content {
+    text-align: center;
   }
 
   .view-more {
