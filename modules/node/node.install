@@ -114,6 +114,7 @@ function node_schema() {
       'uid'                 => array('uid'),
       'tnid'                => array('tnid'),
       'translate'           => array('translate'),
+      'language'            => array('language'),
     ),
     'unique keys' => array(
       'vid' => array('vid'),
@@ -923,6 +924,23 @@ function node_update_7013() {
     'default' => NULL,
   ));
   db_add_unique_key('node', 'vid', array('vid'));
+}
+
+/**
+ * Add an index on {node}.language.
+ */
+function node_update_7014() {
+  db_add_index('node', 'language', array('language'));
+}
+
+/**
+ * Enable node types that may have been erroneously disabled in Drupal 7.36.
+ */
+function node_update_7015() {
+  db_update('node_type')
+    ->fields(array('disabled' => 0))
+    ->condition('base', 'node_content')
+    ->execute();
 }
 
 /**

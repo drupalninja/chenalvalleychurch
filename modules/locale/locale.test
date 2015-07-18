@@ -1202,7 +1202,7 @@ EOF;
    * Helper function that returns a .po file with context.
    */
   function getPoFileWithContext() {
-    // Croatian (code hr) is one the the languages that have a different
+    // Croatian (code hr) is one of the languages that have a different
     // form for the full name and the abbreviated name for the month May.
     return <<< EOF
 msgid ""
@@ -1685,7 +1685,7 @@ class LocaleBrowserDetectionTest extends DrupalUnitTestCase {
     );
 
     $test_cases = array(
-      // Equal qvalue for each language, choose the site prefered one.
+      // Equal qvalue for each language, choose the site preferred one.
       'en,en-US,fr-CA,fr,es-MX' => 'en',
       'en-US,en,fr-CA,fr,es-MX' => 'en',
       'fr,en' => 'en',
