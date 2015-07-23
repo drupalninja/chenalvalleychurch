@@ -1,0 +1,332 @@
+<?php
+
+/**
+ * @file
+ * Defines functions for Storage API Populate (storage_api_populate).
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function storage_api_populate_menu() {
+  $items['admin/structure/storage/list'] = array(
+    'title' => "File storage",
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 1,
+  );
+
+  $items['admin/structure/storage/populate'] = array(
+    'title' => "Populate Storage",
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('storage_populate_form'),
+    'access arguments' => array('administer storage'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 2,
+  );
+
+  return $items;
+}
+
+/**
+ * Main form for confirming action to process files into Storage
+ */
+function storage_populate_form() {
+  $submittable = FALSE;
+
+  if (module_exists('storage_core_bridge')) {
+    $submittable = TRUE;
+    $file_fields = storage_populate_get_file_fields();
+    $form['core_bridge'] = array(
+      '#type' => 'fieldset',
+      '#collapsible' => TRUE,
+      '#title' => 'Storage API core bridge',
+      '#tree' => TRUE,
+    );
+    $form['core_bridge']['process'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Process below fields'),
+    );
+    $form['core_bridge']['file_fields'] = array(
+      '#markup' => theme('item_list', array('items' => $file_fields)),
+    );
+  }
+  if (module_exists('storage_stream_wrapper')) {
+    $submittable = TRUE;
+    if (file_default_scheme() == STORAGE_STREAM_WRAPPER_SCHEME) {
+      $message = 'You have configured Storage API\'s stream wrapper as the default download method at <a href="@url">@url</a>. Files uploaded to the site before this setting are in the public file scheme.';
+    }
+    else {
+      $message = 'Nothing to do here. You may want to configure Storage API\'s stream wrapper as the default download method at <a href="@url">@url</a>.';
+    }
+    $form['stream_wrapper'] = array(
+      '#type' => 'fieldset',
+      '#collapsible' => TRUE,
+      '#title' => 'Storage API stream wrapper',
+      '#description' => t($message, array('@url' => url('admin/config/media/file-system'))),
+      '#tree' => TRUE,
+    );
+    if (file_default_scheme() == STORAGE_STREAM_WRAPPER_SCHEME) {
+      $form['stream_wrapper']['process'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Move all files in the public:// to Storage API\'s stream wrapper please'),
+      );
+    }
+  }
+
+  if (!$submittable) {
+    $form['advice'] = array(
+      '#markup' => t('No files to populate Storage API. You need to enable and configure <a href="@url1">Storage API stream wrapper</a> module or <a href="@url2">Storage API\'s</a> core_bridge submodule.', array('@url1' => 'https://drupal.org/project/storage_api_stream_wrapper', '@url2' => 'https://drupal.org/project/storage_api')),
+    );
+  }
+  else {
+    $form['confirm'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('<strong>Confirm</strong> process of moving files into Storage API'),
+      '#description' => t('This process is irreversible. You\'re warned to test it in a sandbox environment first. Also, make a backup before proceeding.'),
+    );
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Start'),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Check that the confirm box has been checked and the user accepts the risk!
+ */
+function storage_populate_form_validate($form, &$form_state) {
+  if ($form_state['values']['confirm'] == 0) {
+    form_set_error('confirm', t('You must check <strong>confirm</strong> to start the process.'));
+  }
+}
+
+/**
+ * Submit action to configure and start the batch processes
+ * - An operation is defined for each file field
+ */
+function storage_populate_form_submit($form, &$form_state) {
+  $operations = array();
+  if (module_exists('storage_core_bridge') && $form_state['values']['core_bridge']['process']) {
+    // Load each file field process as a separate operation.
+    $file_fields = storage_populate_get_file_fields();
+    foreach ($file_fields as $field_name) {
+      $operations[] = array('storage_populate_batch_op_core_bridge', array($field_name));
+    }
+  }
+  if (module_exists('storage_stream_wrapper') && $form_state['values']['stream_wrapper']['process']) {
+    $operations[] = array('storage_populate_batch_op_stream_wrapper', array());
+  }
+
+  // Configure a batch.
+  $batch = array(
+    'title' => t('Populating files to Storage.'),
+    'operations' => $operations,
+    'init_message' => t('Populate is starting.'),
+    'progress_message' => t('Populate is running...'),
+    'error_message' => t('Populate has encountered an error.'),
+    'finished' => 'storage_populate_finished',
+  );
+
+  batch_set($batch);
+}
+
+/**
+ * Batch operation to process storages associated to a field via core_bridge.
+ *
+ * @param $field_name
+ *  A string of the field name to process
+ */
+function storage_populate_batch_op_core_bridge($field_name, &$context) {
+  // Prepare the query for this field.
+  $table_name = 'field_data_' . $field_name;
+  $table_field_name = $field_name . '_fid';
+  $query = db_select($table_name, 'f');
+
+  // If it is the first time, initialize the batch context.
+  if (empty($context['sandbox'])) {
+    $count = $query->countQuery()->execute()->fetchField();
+    if ($count == 0) {
+      $context['finished'] = 1;
+      return;
+    }
+    $context['sandbox']['total'] = $count;
+    $context['sandbox']['current'] = 0;
+  }
+
+  // Add files into Storage API.
+  $result = $query
+    ->fields('f', array('entity_id', 'delta', $table_field_name))
+    ->orderBy('f.entity_id', 'ASC')
+    ->range($context['sandbox']['current'], 50) // Items per iteration.
+    ->execute();
+  while ($row = $result->fetchObject()) {
+    $file = file_load($row->$table_field_name);
+    if ($file) {
+      $uri = $file->uri;
+      $scheme = file_uri_scheme($uri);
+      $target = file_uri_target($uri);
+
+      if (!preg_match('/^storage\-/', $scheme)) { // Check file schema is not already set to Storage.
+        $context['results']['processed'][] = $uri;
+
+        $storage_core_bridge_uri = preg_replace('/^' . $scheme . '/', storage_core_bridge_field_scheme($field_name), $uri);
+        $options = array(
+          'source_uri' => $uri,
+          'filename' => $target,
+        );
+        try {
+          // Add to Storage API.
+          $storage = storage_core_bridge_field_selector($field_name)->storageAdd($options);
+          db_insert('storage_core_bridge')
+            ->fields(array(
+              'storage_id' => $storage->storage_id,
+              'uri' => $storage_core_bridge_uri,
+            ))
+            ->execute();
+
+          // Update File URI.
+          $file->uri = $storage_core_bridge_uri;
+          $file = file_save($file);
+        }
+        catch (StorageException $e) {
+          $context['results']['failed'][] = $uri;
+          $message = 'Failed adding file @fid from field @field_name to storage api with exception @exception.';
+          $variables = array(
+            '@fid' => $file->fid,
+            '@field_name' => $field_name,
+            '@exception' => $e->getMessage(),
+          );
+          watchdog('storage_api_populate', $message, $variables, WATCHDOG_ERROR);
+        }
+      }
+    }
+
+    // Update the batch context.
+    $context['sandbox']['current']++;
+    $context['message'] = t('Moving files from @field_name field: @current of @total.', array(
+      '@field_name' => $field_name,
+      '@current' => $context['sandbox']['current'],
+      '@total' => $context['sandbox']['total']
+    ));
+  }
+
+  // Inform the batch engine whether we are finished,
+  // and provide an estimation of the completion level we reached.
+  $context['finished'] = $context['sandbox']['current'] / $context['sandbox']['total'];
+}
+
+/**
+ * Batch operation to process storages managed by stream_wrapper.
+ */
+function storage_populate_batch_op_stream_wrapper(&$context) {
+  // Prepare the query.
+  $query = db_select('file_managed', 'f');
+
+  // If it is the first time, initialize the batch context.
+  if (empty($context['sandbox'])) {
+    $count = $query->countQuery()->execute()->fetchField();
+    if ($count == 0) {
+      $context['finished'] = 1;
+      return;
+    }
+    $context['sandbox']['total'] = $count;
+    $context['sandbox']['current'] = 0;
+  }
+
+  // Add files into Storage API.
+  $result = $query
+    ->fields('f', array('fid', 'uri'))
+    ->orderBy('f.fid', 'ASC')
+    ->range($context['sandbox']['current'], 50) // Items per iteration.
+    ->execute();
+  while ($row = $result->fetchObject()) {
+    if (strpos($row->uri, 'public://') === 0) {
+      $file = file_load($row->fid);
+      if ($file) {
+        $uri = $file->uri;
+        $context['results']['processed'][] = $uri;
+
+        $scheme = file_uri_scheme($uri);
+        $target = file_uri_target($uri);
+        $storage_uri = preg_replace('/^' . $scheme . '/', STORAGE_STREAM_WRAPPER_SCHEME, $uri);
+        $options = array(
+          'source_uri' => $uri,
+          'filename' => $target,
+        );
+        try {
+          // Add to Storage API.
+          $storage = storage_stream_wrapper_selector()->storageAdd($options);
+          db_insert('storage_stream_wrapper')
+            ->fields(array(
+              'storage_id' => $storage->storage_id,
+              'uri' => $storage_uri,
+            ))
+            ->execute();
+
+          // Update File URI.
+          $file->uri = $storage_uri;
+          $file = file_save($file);
+        }
+        catch (StorageException $e) {
+          $context['results']['failed'][] = $uri;
+          $message = 'Failed adding file @fid to storage api with exception @exception.';
+          $variables = array(
+            '@fid' => $file->fid,
+            '@exception' => $e->getMessage(),
+          );
+          watchdog('storage_api_populate', $message, $variables, WATCHDOG_ERROR);
+        }
+      }
+    }
+
+    // Update the batch context.
+    $context['sandbox']['current']++;
+    $context['message'] = t('Moving files to Storage API stream wrapper: @current of @total.', array(
+      '@current' => $context['sandbox']['current'],
+      '@total' => $context['sandbox']['total']
+    ));
+  }
+
+  // Inform the batch engine whether we are finished,
+  // and provide an estimation of the completion level we reached.
+  $context['finished'] = $context['sandbox']['current'] / $context['sandbox']['total'];
+}
+
+/**
+ * Batch finished messages, if the processes succeded or failed.
+ */
+function storage_populate_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message(t('@count files processed.', array('@count' => count($results[processed]))));
+    $failed = count($results[failed]);
+    if ($failed > 0) {
+      drupal_set_message(t('@count files failed. See watchdog for details.', array('@count' => $failed)), 'warning');
+    }
+  }
+  else {
+    // An error occurred.
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    drupal_set_message(t('An error occurred while processing @operation with arguments : @args', array('@operation' => $error_operation[0], '@args' => print_r($error_operation[0], TRUE))));
+  }
+}
+
+/**
+ * Returns the name of all fields of type file or image.
+ *
+ * @return
+ * An array of field names (string)
+ */
+function storage_populate_get_file_fields() {
+  $field_names = array('field_oc_audio');
+
+//  $fields = _field_info_field_cache()->getFields();
+//  foreach ($fields as $field_info) {
+//    if ($field_info['type'] == 'image' || $field_info['type'] == 'file') {
+//      $field_names[] = $field_info['field_name'];
+//    }
+//  }
+
+  return $field_names;
+}
