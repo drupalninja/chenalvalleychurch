@@ -158,7 +158,7 @@ function storage_populate_batch_op_core_bridge($field_name, &$context) {
   $result = $query
     ->fields('f', array('entity_id', 'delta', $table_field_name))
     ->orderBy('f.entity_id', 'ASC')
-    ->range($context['sandbox']['current'], 50) // Items per iteration.
+    ->range($context['sandbox']['current'], 5) // Items per iteration.
     ->execute();
   while ($row = $result->fetchObject()) {
     $file = file_load($row->$table_field_name);
@@ -238,7 +238,7 @@ function storage_populate_batch_op_stream_wrapper(&$context) {
   $result = $query
     ->fields('f', array('fid', 'uri'))
     ->orderBy('f.fid', 'ASC')
-    ->range($context['sandbox']['current'], 50) // Items per iteration.
+    ->range($context['sandbox']['current'], 5) // Items per iteration.
     ->execute();
   while ($row = $result->fetchObject()) {
     if (strpos($row->uri, 'public://') === 0) {
