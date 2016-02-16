@@ -85,26 +85,44 @@ function openchurch_homepage_rotator_default_page_manager_pages() {
     $pane->pid = 'new-2';
     $pane->panel = 'middle';
     $pane->type = 'block';
-    $pane->subtype = 'chenal_facebook-chenal_facebook';
+    $pane->subtype = 'views-openchurch_latest_blogs-block_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
+    $pane->style = array();
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['middle'][1] = 'new-2';
+    $pane = new stdClass();
+    $pane->pid = 'new-3';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Google Map',
+      'title' => 'Find Us',
+      'body' => '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13105.483335796685!2d-92.4500723!3d34.7966111!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x712d899a5303ac88!2sChenal+Valley+Church!5e0!3m2!1sen!2sus!4v1455502134637" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['middle'][2] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
