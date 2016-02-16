@@ -42,7 +42,7 @@ function openchurch_blog_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_openchurch_blog';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['comment_openchurch_blog'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -103,7 +103,7 @@ function openchurch_blog_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_openchurch_blog';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_openchurch_blog'] = $strongarm;
 
   return $export;

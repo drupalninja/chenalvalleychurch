@@ -13,6 +13,10 @@ function openchurch_blog_ctools_plugin_api() {
     return array("version" => "3");
   }
   list($module, $api) = func_get_args();
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -31,9 +35,9 @@ function openchurch_blog_views_api() {
 function openchurch_blog_node_info() {
   $items = array(
     'openchurch_blog' => array(
-      'name' => t('Blog Entry'),
+      'name' => t('News'),
       'base' => 'node_content',
-      'description' => t('A shared on-line journal where people can post diary entries about their personal experiences and hobbies.'),
+      'description' => t('Church news and updates.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

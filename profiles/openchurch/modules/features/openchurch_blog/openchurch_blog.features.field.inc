@@ -10,7 +10,7 @@
 function openchurch_blog_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-openchurch_blog-body'
+  // Exported field: 'node-openchurch_blog-body'.
   $fields['node-openchurch_blog-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function openchurch_blog_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -82,7 +83,7 @@ function openchurch_blog_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openchurch_blog-field_oc_blog_topic'
+  // Exported field: 'node-openchurch_blog-field_oc_blog_topic'.
   $fields['node-openchurch_blog-field_oc_blog_topic'] = array(
     'field_config' => array(
       'active' => '1',
@@ -103,6 +104,7 @@ function openchurch_blog_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -139,7 +141,7 @@ function openchurch_blog_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_oc_blog_topic',
-      'label' => 'Blog Topic',
+      'label' => 'News Topic',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -147,7 +149,9 @@ function openchurch_blog_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'content_taxonomy_opt_groups' => 0,
+        ),
         'type' => 'options_select',
         'weight' => '1',
       ),
@@ -156,8 +160,8 @@ function openchurch_blog_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Blog Topic');
   t('Body');
+  t('News Topic');
 
   return $fields;
 }
