@@ -50,7 +50,7 @@ function openchurch_blog_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -78,59 +78,51 @@ function openchurch_blog_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '4',
+        'weight' => '2',
       ),
     ),
   );
 
-  // Exported field: 'node-openchurch_blog-field_oc_blog_topic'.
-  $fields['node-openchurch_blog-field_oc_blog_topic'] = array(
+  // Exported field: 'node-openchurch_blog-field_audio_embed'.
+  $fields['node-openchurch_blog-field_audio_embed'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_oc_blog_topic',
+      'field_name' => 'field_audio_embed',
       'foreign keys' => array(
-        'tid' => array(
+        'format' => array(
           'columns' => array(
-            'tid' => 'tid',
+            'format' => 'format',
           ),
-          'table' => 'taxonomy_term_data',
+          'table' => 'filter_format',
         ),
       ),
       'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
+        'format' => array(
+          0 => 'format',
         ),
       ),
       'locked' => '0',
-      'module' => 'taxonomy',
+      'module' => 'text',
       'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'openchurch_blog_topic',
-            'parent' => '0',
-            'depth' => '',
-          ),
-        ),
-        'options_list_callback' => 'content_taxonomy_allowed_values',
+        'max_length' => '255',
       ),
       'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
+      'type' => 'text',
     ),
     'field_instance' => array(
       'bundle' => 'openchurch_blog',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Paste in audio embed from PodBean.',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => '0',
+          'type' => 'hidden',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -139,20 +131,22 @@ function openchurch_blog_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_oc_blog_topic',
-      'label' => 'News Topic',
+      'field_name' => 'field_audio_embed',
+      'label' => 'Audio Embed',
       'required' => 0,
       'settings' => array(
+        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'text',
         'settings' => array(
-          'content_taxonomy_opt_groups' => 0,
+          'size' => '60',
         ),
-        'type' => 'options_select',
+        'type' => 'text_textfield',
         'weight' => '1',
       ),
     ),
@@ -160,8 +154,9 @@ function openchurch_blog_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Audio Embed');
   t('Body');
-  t('News Topic');
+  t('Paste in audio embed from PodBean.');
 
   return $fields;
 }

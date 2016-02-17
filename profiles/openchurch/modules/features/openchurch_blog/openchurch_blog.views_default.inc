@@ -137,6 +137,13 @@ function openchurch_blog_views_default_views() {
   );
   $handler->display->display_options['row_options']['separator'] = ' | ';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  /* Field: Content: Audio Embed */
+  $handler->display->display_options['fields']['field_audio_embed']['id'] = 'field_audio_embed';
+  $handler->display->display_options['fields']['field_audio_embed']['table'] = 'field_data_field_audio_embed';
+  $handler->display->display_options['fields']['field_audio_embed']['field'] = 'field_audio_embed';
+  $handler->display->display_options['fields']['field_audio_embed']['label'] = '';
+  $handler->display->display_options['fields']['field_audio_embed']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_audio_embed']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -151,12 +158,6 @@ function openchurch_blog_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = 'Posted';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
-  /* Field: Content: News Topic */
-  $handler->display->display_options['fields']['field_oc_blog_topic']['id'] = 'field_oc_blog_topic';
-  $handler->display->display_options['fields']['field_oc_blog_topic']['table'] = 'field_data_field_oc_blog_topic';
-  $handler->display->display_options['fields']['field_oc_blog_topic']['field'] = 'field_oc_blog_topic';
-  $handler->display->display_options['fields']['field_oc_blog_topic']['label'] = '';
-  $handler->display->display_options['fields']['field_oc_blog_topic']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -240,7 +241,7 @@ function openchurch_blog_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = 'Posted';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
-  /* Field: Content: News Topic */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_oc_blog_topic']['id'] = 'field_oc_blog_topic';
   $handler->display->display_options['fields']['field_oc_blog_topic']['table'] = 'field_data_field_oc_blog_topic';
   $handler->display->display_options['fields']['field_oc_blog_topic']['field'] = 'field_oc_blog_topic';
@@ -269,6 +270,13 @@ function openchurch_blog_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Audio Embed */
+  $handler->display->display_options['fields']['field_audio_embed']['id'] = 'field_audio_embed';
+  $handler->display->display_options['fields']['field_audio_embed']['table'] = 'field_data_field_audio_embed';
+  $handler->display->display_options['fields']['field_audio_embed']['field'] = 'field_audio_embed';
+  $handler->display->display_options['fields']['field_audio_embed']['label'] = '';
+  $handler->display->display_options['fields']['field_audio_embed']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_audio_embed']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
